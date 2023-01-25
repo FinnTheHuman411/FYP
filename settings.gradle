@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "fyp_kevin03_ar_restaurant_menu"

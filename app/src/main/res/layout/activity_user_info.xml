@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity_UserInfo">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="User Information"
+        android:lastBaselineToBottomHeight="10sp"
+        android:textSize="22sp"/>
+
+    <TableLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_userinfo_r0"
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:text="ID:" />
+            <TextView
+                android:id="@+id/tv_userinfo_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="N/A" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_userinfo_r1"
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:text="Username:" />
+            <TextView
+                android:id="@+id/tv_userinfo_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Guest" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_userinfo_r2"
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:text="Email:" />
+            <TextView
+                android:id="@+id/tv_userinfo_pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="N/A" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_userinfo_r3"
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:text="Password:" />
+            <TextView
+                android:id="@+id/tv_userinfo_em"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="N/A" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_userinfo_r4"
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:text="Age:" />
+            <TextView
+                android:id="@+id/tv_userinfo_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="N/A" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_userinfo_r5"
+                android:layout_width="80sp"
+                android:layout_height="wrap_content"
+                android:text="Credit:" />
+            <TextView
+                android:id="@+id/tv_userinfo_credit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="N/A" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+</LinearLayout>

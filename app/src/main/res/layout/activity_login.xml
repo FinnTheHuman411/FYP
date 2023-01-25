@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+
+
+    <TextView
+        android:id="@+id/tv_login1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Login"
+        android:textSize="30sp"/>
+
+    <EditText
+        android:id="@+id/et_login_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/tv_login1"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="16sp"
+        android:hint="Username"
+        android:drawableRight="@drawable/ic_user"
+        android:drawablePadding="5dp"/>
+
+    <EditText
+        android:id="@+id/et_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:layout_below="@+id/et_uesername"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:maxLines="1"
+        android:drawableRight="@drawable/ic_password"
+        android:drawablePadding="5dp"/>
+
+    <Button
+        android:id="@+id/btn_submit_login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/et_login_password"
+        android:layout_marginTop="40dp"
+        android:text="Login"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/btn_page_signup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/btn_submit_login"
+        android:layout_marginTop="10dp"
+        android:text="Sign Up"
+        android:textSize="20sp"
+        android:onClick="btn_sign_up"/>
+
+    <Button
+        android:id="@+id/btn_page_guest"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/btn_page_signup"
+        android:layout_marginTop="10dp"
+        android:text="Enter as Guest"
+        android:textSize="20sp"
+        android:onClick="btn_guest"/>
+
+
+</LinearLayout>
