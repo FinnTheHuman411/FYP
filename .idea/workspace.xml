@@ -15,111 +15,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33431c9-984a-42ff-be78-5375410b5009" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_CommentSection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Preview_Mode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/CommentAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/CommentObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bv1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bv2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ds1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fd1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fd2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ms1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_commentwall.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_preview_mode.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/comment_cardview.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/hkmus413f/groupproj_moviebuyer/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/fypkevin03/ar_restaurantmenu/ExampleInstrumentedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/AboutActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Aboutus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Food1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie10.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie11.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie12.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie13.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie14.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie15.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie16.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Misc1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie17.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie18.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie19.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Food2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie20.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Beve_Soup1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie4.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Beve_Soup2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie5.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Dessert1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie7.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/Activity_Movie9.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/CheckoutActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/CheckoutActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/DatabaseHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/GuestActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/HomePageActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/HomePageViewHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/HomepageViewHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/MovieModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/FoodModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/ShoppingCartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_ShoppingCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/SignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Signup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/SummaryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Summary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/UserInfoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/YTConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/cartAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/CartAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/cartObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/CartObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/hkmus413f/groupproj_moviebuyer/summaryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/SummaryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/m2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/m5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/m9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home_page.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/FoodDatabaseHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fd2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/assets/demopizza.glb" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/assets/1001.glb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Food1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Food1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Food2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Food2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Homepage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Preview_Mode.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Preview_Mode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Signup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/DatabaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/AccountDatabaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fd1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fd1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fd2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_aboutpage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_aboutpage.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_food1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_food1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_food2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_food2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_food1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie16.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_misc1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie18.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_food2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_beve_soup1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_beve_soup2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dessert1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_movie9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_shopping_cart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_shopping_cart.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_summary.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_summary.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_cardview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cardview.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/movie_preview_grid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/food_preview_grid.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-night/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/hkmus413f/groupproj_moviebuyer/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/fypkevin03/ar_restaurantmenu/ExampleUnitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +120,7 @@
     <property name="com.android.tools.idea.sqlite.queryhistory" value="delete from user" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Group6's Work/Group6_App" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />

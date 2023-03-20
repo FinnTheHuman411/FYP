@@ -21,12 +21,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                app:srcCompat="@drawable/icon" />
-
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
@@ -41,7 +35,7 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="MovieBuyer"
+                android:text="HKMU FYP (Kevin 03)"
                 android:textAlignment="center"
                 android:textSize="30dp"
                 android:textStyle="bold|italic" />
@@ -60,7 +54,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Made by \n Lam Chiu Yuen (12393992)\nWong Yung Keung (12791830)\nHE Jingshen (12556656)"
+                android:text="Made by \n Lam Chiu Yuen (12393992)\nWong Yung Keung (12791830)\nKo Chun Kit (12837687)"
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -75,22 +69,6 @@
                 android:layout_height="1dp"
                 android:background="?android:attr/listDivider" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="How to order:
-                \n\n1. Create a new account
-                \n2. Login with your created account (If you don't want to create an account, just login as guest with email)
-                \n3.Select one of your desired movie from the menu. You can also watch the trailer in the pages and rate the movie in the pages.
-                \n4. Click [ADD PRODUCT TO CART] if you decided to buy the movie
-                \n5. Click the cart icon in the menu when you decided to checkout
-                \n6. Check if your order is correct, click [CHECKOUT] if you think it is correct. Click [REMOVE FROM CART] from the movies that you don't want
-                \n7. Choose your payment method and press [CHECKOUT]
-                \n8. The summary page will be shown, enjoy!"
-                android:textAlignment="textStart"
-                android:textSize="20dp" />
         </LinearLayout>
 
     </ScrollView>

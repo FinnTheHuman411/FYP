@@ -19,8 +19,9 @@ import java.util.ArrayList;
 public class Activity_Food1 extends AppCompatActivity {
 
     int product_id = 1001;
-    String product_name = "Gyudon (Japanese Beef Bowl)";
-    int price = 50;
+    String product_name = "Pepperoni Pizza";
+    String product_model = "1001.glb";
+    int price = 75;
     int image = R.drawable.fd1;
 
     @Override
@@ -32,7 +33,7 @@ public class Activity_Food1 extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         RatingBar bar = (RatingBar)findViewById(R.id.bar);
-        bar.setRating(3);
+        bar.setRating(4);
     }
 
     public void btn_add(View v){
@@ -49,6 +50,7 @@ public class Activity_Food1 extends AppCompatActivity {
 
     public void to_preview_mode(View v){
         Intent i = new Intent(this, Activity_Preview_Mode.class);
+        i.putExtra("product_model",product_model);
         startActivity(i);
     }
 

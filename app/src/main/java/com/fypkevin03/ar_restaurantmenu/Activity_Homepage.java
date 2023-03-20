@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,41 +28,6 @@ import java.util.List;
 public class Activity_Homepage extends AppCompatActivity {
 
     GridView gridView;
-
-    String FoodName[] = new String[]{
-            "Gyudon (Japanese Beef Bowl)",
-            "Bacon and Parmesan Risotto",
-            "Nikujaga (Beef and Potatoes)",
-            "Banana Cake",
-            "Peppermint Mocha",
-            "Coke",
-    };
-
-    String FoodType[] = new String[]{
-            "Rice",
-            "Rice",
-            "Miscellaneous",
-            "Dessert",
-            "Beverage",
-            "Beverage",
-    };
-    String FoodPrice[] = new String[]{
-            "$50",
-            "$75",
-            "$45",
-            "$26",
-            "$12",
-            "$7",
-    };
-    int FoodImages[] = new int[]{
-            R.drawable.fd1,
-            R.drawable.fd2,
-            R.drawable.ms1,
-            R.drawable.ds1,
-            R.drawable.bv1,
-            R.drawable.bv2,
-    };
-
     List<FoodModel> listItems = new ArrayList<>();
     HomePageAdapter homePageAdapter;
 
@@ -76,13 +42,22 @@ public class Activity_Homepage extends AppCompatActivity {
 
         gridView = findViewById(R.id.gridview);
 
-        for (int i = 0; i < FoodName.length; i++){
-            FoodModel movieModel = new FoodModel(FoodImages[i], FoodName[i], FoodPrice[i], FoodType[i]);
-            listItems.add(movieModel);
-        }
-
+        SQLiteDatabase foods = openOrCreateDatabase("Foods.db",MODE_PRIVATE,null);
         homePageAdapter = new HomePageAdapter(listItems,this);
         gridView.setAdapter(homePageAdapter);
+        Cursor resultSet = foods.rawQuery("Select * from foods",null);
+        resultSet.moveToFirst();
+
+        if (resultSet.getCount() != 0){
+            do{
+                listItems.add(new FoodModel(
+                        resultSet.getInt(6),
+                        resultSet.getString(2),
+                        "$" + resultSet.getString(5),
+                        resultSet.getString(3)
+                ));
+            } while (resultSet.moveToNext());
+        }
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -99,18 +74,6 @@ public class Activity_Homepage extends AppCompatActivity {
                     intent.putExtra("username",key_username);
                     startActivity(intent);
                 } else if (pos == 2) {
-                    intent = new Intent(view.getContext(), Activity_Misc1.class);
-                    intent.putExtra("username",key_username);
-                    startActivity(intent);
-                } else if (pos == 3) {
-                    intent = new Intent(view.getContext(), Activity_Dessert1.class);
-                    intent.putExtra("username",key_username);
-                    startActivity(intent);
-                } else if (pos == 4) {
-                    intent = new Intent(view.getContext(), Activity_Beve_Soup1.class);
-                    intent.putExtra("username",key_username);
-                    startActivity(intent);
-                } else if (pos == 5) {
                     intent = new Intent(view.getContext(), Activity_Beve_Soup2.class);
                     intent.putExtra("username",key_username);
                     startActivity(intent);
@@ -246,7 +209,7 @@ public class Activity_Homepage extends AppCompatActivity {
     }
 
     public void showInfo(){
-        DatabaseHelper db = new DatabaseHelper(this);
+        AccountDatabaseHelper db = new AccountDatabaseHelper(this);
         final String key_username = getIntent().getStringExtra("username");   //Pass from LoginActivity
         Cursor res = db.getInfo(key_username);
         if (res.getCount() == 0){

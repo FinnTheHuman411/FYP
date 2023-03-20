@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class Activity_UserInfo extends AppCompatActivity {
 
-    DatabaseHelper db;
+    AccountDatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class Activity_UserInfo extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        db = new DatabaseHelper(this);
+        db = new AccountDatabaseHelper(this);
         final String key_username = getIntent().getStringExtra("username");   // Pass from LoginActivity and HomePageActivity
 
         if (key_username != null){

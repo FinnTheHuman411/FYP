@@ -9,10 +9,17 @@ import android.os.Handler;
 
 public class Activity_Main extends AppCompatActivity {
 
+    FoodDatabaseHelper fdb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fdb = new FoodDatabaseHelper(this);
+        fdb.insert(1001, "Pepperoni Pizza", "Main", "Pizza", 75.0, R.drawable.fd1, "1001.glb");
+        fdb.insert(1002, "Cheezburger", "Main", "Hamburger", 35.0, R.drawable.fd2, "1002.glb");
+        fdb.insert(4002, "Coke", "Drink", "Soft Drink", 7.0, R.drawable.bv2, null);
 
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
         cart.execSQL("DROP TABLE IF EXISTS cart;");

@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 
 public class Activity_Signup extends AppCompatActivity {
 
-    DatabaseHelper db;
+    AccountDatabaseHelper db;
     EditText e1, e2, e3, e4, e5;
     Button b1;
     TextView t1;
@@ -34,7 +34,7 @@ public class Activity_Signup extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        db = new DatabaseHelper(this);
+        db = new AccountDatabaseHelper(this);
         e1 = (EditText)findViewById(R.id.username);
         e2 = (EditText)findViewById(R.id.email);
         e3 = (EditText)findViewById(R.id.age);

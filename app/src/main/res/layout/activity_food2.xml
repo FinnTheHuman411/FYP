@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="Bacon and Parmesan Risotto"
+                android:text="Cheezburger"
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -71,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Price: $75\n"
+                android:text="Price: $35\n"
                 android:textSize="18sp"
                 android:padding="8dp"/>
 

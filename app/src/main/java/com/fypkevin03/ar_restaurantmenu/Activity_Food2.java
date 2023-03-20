@@ -13,8 +13,9 @@ import android.widget.Toast;
 public class Activity_Food2 extends AppCompatActivity {
 
     int product_id = 1002;
-    String product_name = "Bacon and Parmesan Risotto";
-    int price = 72;
+    String product_name = "Cheezburger";
+    String product_model = "1002.glb";
+    int price = 35;
     int image = R.drawable.fd2;
 
     @Override
@@ -43,6 +44,7 @@ public class Activity_Food2 extends AppCompatActivity {
 
     public void to_preview_mode(View v){
         Intent i = new Intent(this, Activity_Preview_Mode.class);
+        i.putExtra("product_model",product_model);
         startActivity(i);
     }
 

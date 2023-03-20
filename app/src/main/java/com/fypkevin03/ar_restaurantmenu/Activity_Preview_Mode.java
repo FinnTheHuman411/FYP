@@ -17,9 +17,11 @@ public class Activity_Preview_Mode extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
+        final String food_model = getIntent().getStringExtra("product_model");
+
         // Load model.glb from assets folder or http url
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-        arFragment.setOnTapPlaneGlbModel("demopizza.glb");
+        arFragment.setOnTapPlaneGlbModel(food_model);
 //        arFragment.setOnTapPlaneGlbModel("https://github.com/codemaker2015/3d-models/blob/master/glb_files/model.glb?raw=true");
     }
 }
