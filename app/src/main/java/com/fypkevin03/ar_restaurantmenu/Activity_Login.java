@@ -17,14 +17,14 @@ public class Activity_Login extends AppCompatActivity {
 
     EditText e1,e2;
     Button b1;
-    AccountDatabaseHelper db;
+    DatabaseHelper_Account db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        db = new AccountDatabaseHelper(this);
+        db = new DatabaseHelper_Account(this);
 
         e1 = (EditText)findViewById(R.id.et_login_email);
         e2 = (EditText)findViewById(R.id.et_login_password);

@@ -11,10 +11,10 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
-public class SummaryAdapter extends ArrayAdapter<CartObject> {
+public class Adapter_Summary extends ArrayAdapter<Object_Cart> {
     public Context mContext;
 
-    public SummaryAdapter(@NonNull Context context, ArrayList<CartObject> cartObjects) {
+    public Adapter_Summary(@NonNull Context context, ArrayList<Object_Cart> cartObjects) {
         super(context, 0, cartObjects);
         mContext = context;
 
@@ -25,7 +25,7 @@ public class SummaryAdapter extends ArrayAdapter<CartObject> {
     public View getView(int position, View convertView, final ViewGroup parent) {
 
         // Get the data item for this position
-        final CartObject obj = getItem(position);
+        final Object_Cart obj = getItem(position);
 
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {

@@ -28,8 +28,8 @@ public class Activity_ShoppingCart extends AppCompatActivity {
         ListView lv = (ListView) findViewById(R.id.cartListview);
 
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
-        ArrayList<CartObject> cartObjects = new ArrayList<CartObject>();
-        CartAdapter adapter = new CartAdapter(this, cartObjects);
+        ArrayList<Object_Cart> cartObjects = new ArrayList<Object_Cart>();
+        Adapter_Cart adapter = new Adapter_Cart(this, cartObjects);
 
         lv.setAdapter(adapter);
 
@@ -45,7 +45,7 @@ public class Activity_ShoppingCart extends AppCompatActivity {
 //                        resultSet.getString(4)
 //                        );
 
-                cartObjects.add(new CartObject(
+                cartObjects.add(new Object_Cart(
                         resultSet.getInt(0),
                         resultSet.getInt(1),
                         resultSet.getString(2),
@@ -66,7 +66,7 @@ public class Activity_ShoppingCart extends AppCompatActivity {
         Cursor resultSet = cart.rawQuery("Select * from cart",null);
         resultSet.moveToFirst();
         if (resultSet.getCount() != 0){
-            Intent i = new Intent(this, CheckoutActivity.class);
+            Intent i = new Intent(this, Activity_Checkout.class);
             startActivity(i);
             finish();
         } else {

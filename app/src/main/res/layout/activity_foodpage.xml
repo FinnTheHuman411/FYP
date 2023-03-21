@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_Food2">
+    tools:context=".Activity_Food1">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,12 +19,12 @@
             >
 
             <ImageView
-                android:id="@+id/f2"
+                android:id="@+id/foodImage"
                 android:layout_width="match_parent"
-                android:layout_height="304dp"
+                android:layout_height="314dp"
                 android:layout_weight="1"
-                android:padding="16dp"
-                android:src="@drawable/fd2" />
+                android:src="@drawable/fd1"
+                tools:ignore="MissingConstraints" />
 
             <Space
                 android:layout_width="match_parent"
@@ -43,22 +43,23 @@
                 android:background="?android:attr/listDivider" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/foodName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:padding="8dp"
-                android:text="Cheezburger"
+                android:text=""
                 android:textAlignment="center"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
             <RatingBar
-                android:id="@+id/bar"
+                android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:numStars="5"
                 android:saveEnabled="true"
-                android:numStars="5"/>
+                tools:ignore="SpeakableTextPresentCheck" />
 
             <View
                 android:id="@+id/divider3"
@@ -67,12 +68,22 @@
                 android:background="?android:attr/listDivider" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/subtitle1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Price: $35\n"
+                android:padding="8dp"
+                android:text="Basic Information"
                 android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/foodInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Price: $\nType: \nInfo: "
+                android:textSize="20sp"
                 android:padding="8dp"/>
 
             <View
@@ -94,8 +105,6 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="60dp" />
-
-
 
 
         </LinearLayout>
@@ -131,4 +140,5 @@
             android:onClick="btn_add"/>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

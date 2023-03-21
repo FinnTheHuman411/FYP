@@ -26,8 +26,8 @@ public class Activity_Summary extends AppCompatActivity {
         ListView summary = (ListView) findViewById(R.id.lv_summary);
 
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
-        ArrayList<CartObject> cartObjects = new ArrayList<CartObject>();
-        SummaryAdapter adapter = new SummaryAdapter(this, cartObjects);
+        ArrayList<Object_Cart> cartObjects = new ArrayList<Object_Cart>();
+        Adapter_Summary adapter = new Adapter_Summary(this, cartObjects);
         summary.setAdapter(adapter);
 
         Cursor resultSet = cart.rawQuery("Select * from cart",null);
@@ -35,7 +35,7 @@ public class Activity_Summary extends AppCompatActivity {
 
         if (resultSet.getCount() != 0){
             do{
-                cartObjects.add(new CartObject(
+                cartObjects.add(new Object_Cart(
                         resultSet.getInt(0),
                         resultSet.getInt(1),
                         resultSet.getString(2),

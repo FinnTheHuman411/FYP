@@ -36,8 +36,8 @@ public class Activity_CommentSection extends AppCompatActivity {
         final int product_id = getIntent().getIntExtra("product_id",0);   // Pass from Food Page
         ListView cmlv = (ListView) findViewById(R.id.cmListview);
         SQLiteDatabase comments = openOrCreateDatabase("comments",MODE_PRIVATE,null);
-        ArrayList<CommentObject> commentObjects = new ArrayList<CommentObject>();
-        CommentAdapter adapter = new CommentAdapter(this, commentObjects);
+        ArrayList<Object_Comment> commentObjects = new ArrayList<Object_Comment>();
+        Adapter_Comment adapter = new Adapter_Comment(this, commentObjects);
 
         cmlv.setAdapter(adapter);
 
@@ -46,7 +46,7 @@ public class Activity_CommentSection extends AppCompatActivity {
 
         if (resultSet.getCount() != 0){
             do{
-                commentObjects.add(new CommentObject(
+                commentObjects.add(new Object_Comment(
                         resultSet.getInt(0),
                         resultSet.getInt(1),
                         resultSet.getString(2),

@@ -4,13 +4,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class HomepageViewHolder {
+public class ViewHolder_Homepage {
 
     ImageView itemImage;
     TextView FoodName;
     TextView FoodPrice;
     TextView FoodType;
-    HomepageViewHolder(View v){
+    ViewHolder_Homepage(View v){
         itemImage = v.findViewById(R.id.icon);
         FoodName = v.findViewById(R.id.FoodName);
         FoodPrice = v.findViewById(R.id.FoodPrice);

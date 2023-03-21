@@ -13,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -28,7 +27,7 @@ import java.util.List;
 public class Activity_Homepage extends AppCompatActivity {
 
     GridView gridView;
-    List<FoodModel> listItems = new ArrayList<>();
+    List<Object_Food> listItems = new ArrayList<>();
     HomePageAdapter homePageAdapter;
 
     @Override
@@ -50,7 +49,8 @@ public class Activity_Homepage extends AppCompatActivity {
 
         if (resultSet.getCount() != 0){
             do{
-                listItems.add(new FoodModel(
+                listItems.add(new Object_Food(
+                        resultSet.getInt(1),
                         resultSet.getInt(6),
                         resultSet.getString(2),
                         "$" + resultSet.getString(5),
@@ -59,27 +59,6 @@ public class Activity_Homepage extends AppCompatActivity {
             } while (resultSet.moveToNext());
         }
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int pos = listItems.indexOf(homePageAdapter.getItem(position));
-                final String key_username = getIntent().getStringExtra("username");   //Pass from LoginActivity
-                Intent intent;
-                if (pos == 0) {
-                    intent = new Intent(view.getContext(), Activity_Food1.class);
-                    intent.putExtra("username",key_username);
-                    startActivity(intent);
-                } else if (pos == 1) {
-                    intent = new Intent(view.getContext(), Activity_Food2.class);
-                    intent.putExtra("username",key_username);
-                    startActivity(intent);
-                } else if (pos == 2) {
-                    intent = new Intent(view.getContext(), Activity_Beve_Soup2.class);
-                    intent.putExtra("username",key_username);
-                    startActivity(intent);
-                }
-            }
-        });
     }
 
     @Override
@@ -132,13 +111,13 @@ public class Activity_Homepage extends AppCompatActivity {
 
     public class HomePageAdapter extends BaseAdapter implements Filterable {
 
-        private List<FoodModel> foodModelList;
-        private List<FoodModel> foodModelListFiltered;
+        private List<Object_Food> foodModelList;
+        private List<Object_Food> foodModelListFiltered;
         private Context context;
 
-        public HomePageAdapter(List<FoodModel> movieModelList, Context context){
-            this.foodModelList = movieModelList;
-            this.foodModelListFiltered = movieModelList;
+        public HomePageAdapter(List<Object_Food> foodModelList, Context context){
+            this.foodModelList = foodModelList;
+            this.foodModelListFiltered = foodModelList;
             this.context = context;
         }
 
@@ -166,10 +145,25 @@ public class Activity_Homepage extends AppCompatActivity {
             TextView moviePrice = view.findViewById(R.id.FoodPrice);
             TextView movieGenre = view.findViewById(R.id.FoodType);
 
+            final int key_foodID = foodModelListFiltered.get(i).getFoodID();
             imageView.setImageResource(foodModelListFiltered.get(i).getImage());
             movieName.setText(foodModelListFiltered.get(i).getFoodName());
             moviePrice.setText(foodModelListFiltered.get(i).getFoodPrice());
             movieGenre.setText(foodModelListFiltered.get(i).getFoodType());
+
+            view.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    final String key_username = getIntent().getStringExtra("username");   //Pass from LoginActivity
+                    Intent intent;
+                    // Access the row position here to get the correct data item
+                    intent = new Intent(view.getContext(), Activity_FoodPage.class);
+                    intent.putExtra("username",key_username);
+                    intent.putExtra("product_id",key_foodID);
+                    startActivity(intent);
+                }
+            });
 
             return view;
         }
@@ -186,8 +180,8 @@ public class Activity_Homepage extends AppCompatActivity {
                         filterResults.values = foodModelList;
                     } else {
                         String searchStr = charSequence.toString().toLowerCase();
-                        List<FoodModel> resultData = new ArrayList<>();
-                        for(FoodModel foodModel:foodModelList){
+                        List<Object_Food> resultData = new ArrayList<>();
+                        for(Object_Food foodModel:foodModelList){
                             if(foodModel.getFoodName().toLowerCase().contains(searchStr)||foodModel.getFoodType().toLowerCase().contains(searchStr)){
                                 resultData.add(foodModel);
                             }
@@ -200,7 +194,7 @@ public class Activity_Homepage extends AppCompatActivity {
 
                 @Override
                 protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-                    foodModelListFiltered = (List<FoodModel>) filterResults.values;
+                    foodModelListFiltered = (List<Object_Food>) filterResults.values;
                     notifyDataSetChanged();
                 }
             };
@@ -209,7 +203,7 @@ public class Activity_Homepage extends AppCompatActivity {
     }
 
     public void showInfo(){
-        AccountDatabaseHelper db = new AccountDatabaseHelper(this);
+        DatabaseHelper_Account db = new DatabaseHelper_Account(this);
         final String key_username = getIntent().getStringExtra("username");   //Pass from LoginActivity
         Cursor res = db.getInfo(key_username);
         if (res.getCount() == 0){

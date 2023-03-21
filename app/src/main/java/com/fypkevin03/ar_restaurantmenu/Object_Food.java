@@ -1,17 +1,27 @@
 package com.fypkevin03.ar_restaurantmenu;
 
-public class FoodModel {
+public class Object_Food {
     int index;
+    int foodID;
     int image;
     String foodName;
     String foodPrice;
     String foodType;
 
-    public FoodModel(int image, String foodName, String foodPrice, String foodType) {
+    public Object_Food(int foodID, int image, String foodName, String foodPrice, String foodType) {
+        this.foodID = foodID;
         this.image = image;
         this.foodName = foodName;
         this.foodPrice = foodPrice;
         this.foodType = foodType;
+    }
+
+    public int getFoodID(){
+        return foodID;
+    }
+
+    public void setFoodID(int foodID){
+        this.foodID = foodID;
     }
 
     public int getImage(){

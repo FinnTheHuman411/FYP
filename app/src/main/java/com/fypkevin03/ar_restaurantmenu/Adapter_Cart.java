@@ -16,11 +16,11 @@ import java.util.ArrayList;
 
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
-public class CartAdapter extends ArrayAdapter<CartObject> {
+public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
 
     public Context mContext;
 
-    public CartAdapter(@NonNull Context context, ArrayList<CartObject> cartObjects) {
+    public Adapter_Cart(@NonNull Context context, ArrayList<Object_Cart> cartObjects) {
         super(context, 0, cartObjects);
         mContext = context;
     }
@@ -30,7 +30,7 @@ public class CartAdapter extends ArrayAdapter<CartObject> {
     public View getView(int position, View convertView, final ViewGroup parent) {
 
         // Get the data item for this position
-        final CartObject obj = getItem(position);
+        final Object_Cart obj = getItem(position);
 
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
@@ -62,7 +62,7 @@ public class CartAdapter extends ArrayAdapter<CartObject> {
             public void onClick(View view) {
                 int position = (Integer) view.getTag();
                 // Access the row position here to get the correct data item
-                CartObject object = getItem(position);
+                Object_Cart object = getItem(position);
                 remove(object);
 
                 SQLiteDatabase cart = mContext.openOrCreateDatabase("cart",mContext.MODE_PRIVATE,null);

@@ -2,25 +2,21 @@ package com.fypkevin03.ar_restaurantmenu;
 
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import org.w3c.dom.Comment;
-
 import java.util.ArrayList;
 
-public class CommentAdapter extends ArrayAdapter<CommentObject> {
+public class Adapter_Comment extends ArrayAdapter<Object_Comment> {
 
     public Context mContext;
 
-    public CommentAdapter(@NonNull Context context, ArrayList<CommentObject> commentObjects) {
+    public Adapter_Comment(@NonNull Context context, ArrayList<Object_Comment> commentObjects) {
         super(context, 0, commentObjects);
         mContext = context;
     }
@@ -30,7 +26,7 @@ public class CommentAdapter extends ArrayAdapter<CommentObject> {
     public View getView(int position, View convertView, final ViewGroup parent) {
 
         // Get the data item for this position
-        final CommentObject obj = getItem(position);
+        final Object_Comment obj = getItem(position);
 
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {

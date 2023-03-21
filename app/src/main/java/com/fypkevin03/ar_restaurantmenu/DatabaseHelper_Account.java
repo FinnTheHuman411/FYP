@@ -12,45 +12,40 @@ import androidx.annotation.Nullable;
 import java.util.Random;
 
 
-public class FoodDatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper_Account extends SQLiteOpenHelper {
     Context mContext;
-    public FoodDatabaseHelper(@Nullable Context context) {
-        super(context, "Foods.db", null, 3);
+    public DatabaseHelper_Account(@Nullable Context context) {
+        super(context, "Users.db", null, 1);
         mContext = context;
     }
 
     final int id = new Random().nextInt((9999 - 1000) + 1) + 1000;
+    final int randomC = new Random().nextInt((5000 - 1000) + 1) + 1000;
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table foods(_id INTEGER, product_id INTEGER primary key, product_name VARCHAR, genre VARCHAR, product_info VARCHAR, price DOUBLE, image INTEGER, product_model VARCHAR)");
+        db.execSQL("Create table user(id int, username text primary key, email text, password text, age int, credits int )");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // this method is called to check if the table exists already.
-        db.execSQL("drop table if exists foods");
-        onCreate(db);
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("drop table if exists user");
     }
-
     //inserting in database
-    public boolean insert(Integer product_id, String product_name, String genre, String product_info, Double price, Integer image, String product_model){
+    public boolean insert(String username, String email, String age,  String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("_id", id);
-        contentValues.put("product_id", product_id);
-        contentValues.put("product_name", product_name);
-        contentValues.put("genre", genre);
-        contentValues.put("product_info", product_info);
-        contentValues.put("price", price);
-        contentValues.put("image", image);
-        contentValues.put("product_model", product_model);
-        long ins =db.insert("foods", null, contentValues);
+        contentValues.put("id", id);
+        contentValues.put("username", username);
+        contentValues.put("email", email);
+        contentValues.put("password", password);
+        contentValues.put("age", age);
+        contentValues.put("credits", randomC);
+        long ins =db.insert("user", null, contentValues);
         if (ins == -1) return false;
         else return true;
     }
-    //checking if username exists
-    /*
+    //checking if username exists;
     public Boolean chkusername(String username){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from user where username=?", new String [] {username});
@@ -70,7 +65,6 @@ public class FoodDatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from user where username =?" , new String[]{key_username});
         return cursor;
     }
-    */
 
 //    public void add_to_shopping_cart(int product_id, int count, String product_name, int price) {
 //        SQLiteDatabase cart = this.getWritableDatabase();

@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class CheckoutActivity extends AppCompatActivity {
+public class Activity_Checkout extends AppCompatActivity {
 
 
     public int totalPrice = 0;
@@ -47,7 +47,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute(){
-            progressDialog = ProgressDialog.show(CheckoutActivity.this,
+            progressDialog = ProgressDialog.show(Activity_Checkout.this,
                     "Checkout in Process",
                     "Don't close the app!");
         }
@@ -64,7 +64,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s){
-            Intent i = new Intent(CheckoutActivity.this, Activity_Summary.class);
+            Intent i = new Intent(Activity_Checkout.this, Activity_Summary.class);
             i.putExtra("totalPrice", totalPrice);
             startActivity(i);
             finish();
