@@ -30,7 +30,7 @@ public class Activity_Checkout extends AppCompatActivity {
         resultSet.moveToFirst();
         if (resultSet.getCount() != 0){
             do{
-                totalPrice += resultSet.getInt(4);
+                totalPrice += resultSet.getInt(3) * resultSet.getInt(4);
             } while (resultSet.moveToNext());
         }
 

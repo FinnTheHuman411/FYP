@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.android.filament:gltfio-android:1.21.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3bd462591abd1b4a9c9f269a3cb38e3a/transformed/jetified-gltfio-android-1.21.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3bd462591abd1b4a9c9f269a3cb38e3a/transformed/jetified-gltfio-android-1.21.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/12de72f1567a5e8f72cc92eb91766870/transformed/jetified-gltfio-android-1.21.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/12de72f1567a5e8f72cc92eb91766870/transformed/jetified-gltfio-android-1.21.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.filament/gltfio-android/1.21.1/440cc4380e9032d41a63a85d17e59bcfb7951928/gltfio-android-1.21.1-javadoc.jar!/" />

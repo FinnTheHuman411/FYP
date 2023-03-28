@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 
 public class Activity_ShoppingCart extends AppCompatActivity {
 
-    public int totalPrice = 0;
+    public double totalPrice = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class Activity_ShoppingCart extends AppCompatActivity {
 
         //TextView tv = (TextView) findViewById(R.id.output);
         ListView lv = (ListView) findViewById(R.id.cartListview);
+        Button btn_checkout = (Button) findViewById(R.id.btn_checkout);
 
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
         ArrayList<Object_Cart> cartObjects = new ArrayList<Object_Cart>();
@@ -54,11 +56,11 @@ public class Activity_ShoppingCart extends AppCompatActivity {
                         resultSet.getInt(5)
                 ));
 
-                totalPrice += resultSet.getInt(4);
+                totalPrice += resultSet.getInt(3) * resultSet.getInt(4);
             } while (resultSet.moveToNext());
         }
 
-        //tv.setText(tv.getText() + "\n" + totalPrice);
+        btn_checkout.setText("Checkout: $" + totalPrice);
     }
 
     public void goToCheckout(View v){
@@ -84,6 +86,14 @@ public class Activity_ShoppingCart extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
+    public double getTotalPrice() {
+        return totalPrice;
+    }
 
+    public void setTotalPrice(double price) {
+        totalPrice = price;
+        Button btn_checkout = (Button) findViewById(R.id.btn_checkout);
+        btn_checkout.setText("Checkout: $" + totalPrice);
+    }
 
 }

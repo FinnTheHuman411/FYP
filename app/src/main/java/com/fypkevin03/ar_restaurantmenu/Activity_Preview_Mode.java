@@ -3,6 +3,9 @@ package com.fypkevin03.ar_restaurantmenu;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -11,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentOnAttachListener;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.Config;
 import com.google.ar.core.HitResult;
@@ -36,6 +40,7 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
 
     private ArFragment arFragment;
     private Renderable model;
+    BottomSheetDialog configWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +49,10 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
         getSupportFragmentManager().addFragmentOnAttachListener(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        configWindow = new BottomSheetDialog(this);
+        createConfigWin();
+
+        configWindow.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 
         final String food_model = getIntent().getStringExtra("product_model");
 
@@ -60,6 +69,15 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
         }
 
         loadModels(food_model);
+    }
+
+    private void createConfigWin() {
+        View view = getLayoutInflater().inflate(R.layout.bottom_preview_mode_config,null,false);
+        configWindow.setContentView(view);
+    }
+
+    public void showConfig(View v) {
+        configWindow.show();
     }
 
     @Override

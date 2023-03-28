@@ -49,7 +49,7 @@ public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
         // Populate the data into the template view using the data object
         food_product_image.setImageResource(obj.image);
         food_product_name.setText(obj.product_name);
-        price = obj.price * obj.count;
+        price = obj.price;
         count = obj.count;
         food_price.setText("Price: $" + price);
         food_count.setText("Count: " + count);
@@ -88,13 +88,11 @@ public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
                 // Access the row position here to get the correct data item
                 Object_Cart object = getItem(position);
                 count = count+1;
-                price = obj.price * count;
-                food_price.setText("Price: $" + price);
                 food_count.setText("Count: " + count);
+                ((Activity_ShoppingCart) getContext()).setTotalPrice(((Activity_ShoppingCart) getContext()).getTotalPrice()+obj.price);
 
                 SQLiteDatabase cart = mContext.openOrCreateDatabase("cart",mContext.MODE_PRIVATE,null);
                 ContentValues cv = new ContentValues();
-                cv.put("price", price);
                 cv.put("count", count);
                 cart.update("cart", cv, "_id = ?", new String [] {Integer.toString(object.cartID)});
             }
@@ -109,13 +107,11 @@ public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
                 Object_Cart object = getItem(position);
                 if (count > 1) {
                     count = count-1;
-                    price = obj.price * count;
-                    food_price.setText("Price: $" + price);
                     food_count.setText("Count: " + count);
+                    ((Activity_ShoppingCart) getContext()).setTotalPrice(((Activity_ShoppingCart) getContext()).getTotalPrice()-obj.price);
 
                     SQLiteDatabase cart = mContext.openOrCreateDatabase("cart",mContext.MODE_PRIVATE,null);
                     ContentValues cv = new ContentValues();
-                    cv.put("price", price);
                     cv.put("count", count);
                     cart.update("cart", cv, "_id = ?", new String [] {Integer.toString(object.cartID)});
                 }
