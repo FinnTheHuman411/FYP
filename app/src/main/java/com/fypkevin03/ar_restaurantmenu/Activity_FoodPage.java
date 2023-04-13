@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ public class Activity_FoodPage extends AppCompatActivity {
 
     int food_image, product_id;
     String price, product_name, product_model;
+    private String foodSize = "M";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class Activity_FoodPage extends AppCompatActivity {
         ImageView image = findViewById(R.id.foodImage);
         TextView foodName = findViewById(R.id.foodName);
         TextView basicInfo = findViewById(R.id.foodInfo);
+        RadioGroup radioGroup = findViewById(R.id.sizeSelect);
 
         if (product_id != 0) {
             resultSet.moveToFirst();
@@ -51,23 +54,51 @@ public class Activity_FoodPage extends AppCompatActivity {
 
         RatingBar bar = (RatingBar)findViewById(R.id.ratingBar);
         bar.setRating(3);
+
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                if (checkedId == R.id.radioButton) {
+                    foodSize = "S";
+                } else if (checkedId == R.id.radioButton2) {
+                    foodSize = "M";
+                } else if (checkedId == R.id.radioButton3) {
+                    foodSize = "L";
+                }
+            }
+        });
     }
 
     public void btn_add(View v){
-        add_to_shopping_cart(product_id, product_name, Double.parseDouble(price), food_image);
+        String product_name_size = product_name;
+
+        if (foodSize == "S") {
+            product_name_size = product_name + " Small";
+        } else if (foodSize == "M") {
+            product_name_size = product_name + " Medium";
+        } else if (foodSize == "L") {
+            product_name_size = product_name + " Large";
+        }
+
+        add_to_shopping_cart(product_id, product_name_size, Double.parseDouble(price), food_image);
     }
 
     public void add_to_shopping_cart(int product_id, String product_name, double price, int image){
+        String productid_size = product_id + foodSize;
+
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
-        Cursor cursor = cart.rawQuery("Select * from cart where product_id=?", new String [] {Integer.toString(product_id)});
+        Cursor cursor = cart.rawQuery("Select * from cart where product_id_size=?", new String [] {productid_size});
 
         if (cursor.getCount()>0) {
             cursor.moveToFirst();
             ContentValues cv = new ContentValues();
-            cv.put("count", cursor.getInt(3) + 1);
-            cart.update("cart", cv, "product_id = ?", new String [] {Integer.toString(product_id)});
+            cv.put("count", cursor.getInt(4) + 1);
+            cart.update("cart", cv, "product_id_size = ?", new String [] {productid_size});
         } else {
-            cart.execSQL("INSERT INTO cart (product_id, count, product_name, price, image) VALUES(" + product_id + ", " + 1 + ", '" + product_name + "', " + price + ", " + image +" );");
+            cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, price, image) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', " + price + ", " + image +" );");
+
         }
 
         Toast.makeText(getApplicationContext(), product_name + " has been added to cart.",Toast.LENGTH_SHORT).show();
@@ -75,6 +106,10 @@ public class Activity_FoodPage extends AppCompatActivity {
 
     public void to_preview_mode(View v){
         Intent i = new Intent(this, Activity_Preview_Mode.class);
+        i.putExtra("product_id",product_id);
+        i.putExtra("product_name",product_name);
+        i.putExtra("price",price);
+        i.putExtra("food_image",food_image);
         i.putExtra("product_model",product_model);
         startActivity(i);
     }

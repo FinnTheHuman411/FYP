@@ -26,6 +26,7 @@ public class Activity_Main extends AppCompatActivity {
         cart.execSQL("CREATE TABLE IF NOT EXISTS cart(" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                 "product_id INTEGER NOT NULL, " +
+                "product_id_size VARCHAR NOT NULL, " +
                 "product_name VARCHAR NOT NULL, " +
                 "count INTEGER NOT NULL," +
                 "price INTEGER NOT NULL," +

@@ -1,11 +1,16 @@
 package com.fypkevin03.ar_restaurantmenu;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +29,7 @@ import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.ArSceneView;
 import com.google.ar.sceneform.SceneView;
 import com.google.ar.sceneform.Sceneform;
+import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.Renderable;
 import com.google.ar.sceneform.ux.ArFragment;
@@ -31,6 +37,9 @@ import com.google.ar.sceneform.ux.BaseArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class Activity_Preview_Mode extends AppCompatActivity implements
         FragmentOnAttachListener,
@@ -41,14 +50,16 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
     private ArFragment arFragment;
     private Renderable model;
     BottomSheetDialog configWindow;
+    private float modelScale = 1;
+    private String foodSize = "M";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview_mode);
-        getSupportFragmentManager().addFragmentOnAttachListener(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportFragmentManager().addFragmentOnAttachListener(this);
         configWindow = new BottomSheetDialog(this);
         createConfigWin();
 
@@ -69,15 +80,6 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
         }
 
         loadModels(food_model);
-    }
-
-    private void createConfigWin() {
-        View view = getLayoutInflater().inflate(R.layout.bottom_preview_mode_config,null,false);
-        configWindow.setContentView(view);
-    }
-
-    public void showConfig(View v) {
-        configWindow.show();
     }
 
     @Override
@@ -138,13 +140,104 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
         anchorNode.setParent(arFragment.getArSceneView().getScene());
 
         // Create the transformable model and add it to the anchor.
-        TransformableNode model = new TransformableNode(arFragment.getTransformationSystem());
-        model.setParent(anchorNode);
-        model.setRenderable(this.model)
+        TransformableNode foodNode = new TransformableNode(arFragment.getTransformationSystem());
+        foodNode.setLocalScale(new Vector3(modelScale,modelScale,modelScale));
+        foodNode.setParent(anchorNode);
+        foodNode.setRenderable(this.model)
                 .animate(true).start();
-        model.getScaleController().setEnabled(false);
-        model.getRenderableInstance().setCulling(false);
-        model.select();
+        foodNode.getScaleController().setEnabled(false);
+        foodNode.getRenderableInstance().setCulling(false);
+        foodNode.select();
 
+    }
+
+    private void createConfigWin() {
+        View view = getLayoutInflater().inflate(R.layout.bottom_preview_mode_config,null,false);
+        configWindow.setContentView(view);
+
+        RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.sizeSelect);
+        Button clearModel = (Button) view.findViewById(R.id.clearModel);
+        Button addToCart = (Button) view.findViewById(R.id.addToCart);
+
+            radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    // checkedId is the RadioButton selected
+                    if (checkedId == R.id.radioButton) {
+                        modelScale = 0.75f;
+                        foodSize = "S";
+                    } else if (checkedId == R.id.radioButton2) {
+                        modelScale = 1f;
+                        foodSize = "M";
+                    } else if (checkedId == R.id.radioButton3) {
+                        modelScale = 1.25f;
+                        foodSize = "L";
+                    }
+                }
+            });
+
+        clearModel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arFragment.getArSceneView().getScene().callOnHierarchy(node -> {
+                    if (node instanceof AnchorNode) {
+                        ((AnchorNode) node).getAnchor().detach();
+                    }
+                });
+            }
+        });
+
+        addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final int product_id = getIntent().getIntExtra("product_model",0);
+                final String product_name = getIntent().getStringExtra("product_name");
+                final String price = getIntent().getStringExtra("price");
+                final int food_image = getIntent().getIntExtra("food_image",0);
+                String product_name_size = product_name;
+
+                if (foodSize == "S") {
+                    product_name_size = product_name + " Small";
+                } else if (foodSize == "M") {
+                    product_name_size = product_name + " Medium";
+                } else if (foodSize == "L") {
+                    product_name_size = product_name + " Large";
+                }
+
+                add_to_shopping_cart(product_id, product_name_size, Double.parseDouble(price), food_image);
+            }
+        });
+    }
+
+    public void showConfig(View v) {
+        configWindow.show();
+    }
+
+    public void add_to_shopping_cart(int product_id, String product_name, double price, int image){
+        String productid_size = product_id + foodSize;
+
+        SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
+        Cursor cursor = cart.rawQuery("Select * from cart where product_id_size=?", new String [] {productid_size});
+
+        if (cursor.getCount()>0) {
+            cursor.moveToFirst();
+            ContentValues cv = new ContentValues();
+            cv.put("count", cursor.getInt(4) + 1);
+            cart.update("cart", cv, "product_id_size = ?", new String [] {productid_size});
+        } else {
+            cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, price, image) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', " + price + ", " + image +" );");
+
+        }
+
+        Toast.makeText(getApplicationContext(), product_name + " has been added to cart.",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home)
+        {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

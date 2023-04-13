@@ -50,13 +50,13 @@ public class Activity_ShoppingCart extends AppCompatActivity {
                 cartObjects.add(new Object_Cart(
                         resultSet.getInt(0),
                         resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getInt(3),
+                        resultSet.getString(3),
                         resultSet.getInt(4),
-                        resultSet.getInt(5)
+                        resultSet.getInt(5),
+                        resultSet.getInt(6)
                 ));
 
-                totalPrice += resultSet.getInt(3) * resultSet.getInt(4);
+                totalPrice += resultSet.getInt(4) * resultSet.getInt(5);
             } while (resultSet.moveToNext());
         }
 

@@ -92,6 +92,44 @@
                 android:layout_height="1dp"
                 android:background="?android:attr/listDivider" />
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Size:"
+                android:textSize="24sp"
+                android:padding="8dp" />
+
+            <RadioGroup
+                android:id="@+id/sizeSelect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Small"
+                    android:padding="5dp"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medium"
+                    android:padding="5dp"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Large"
+                    android:padding="5dp" />
+            </RadioGroup>
+
             <Button
                 android:id="@+id/viewcomment"
                 style="@android:style/Widget.Material.Light.Button.Borderless"
