@@ -28,6 +28,7 @@ public class Activity_Main extends AppCompatActivity {
                 "product_id INTEGER NOT NULL, " +
                 "product_id_size VARCHAR NOT NULL, " +
                 "product_name VARCHAR NOT NULL, " +
+                "product_model VARCHAR, " +
                 "count INTEGER NOT NULL," +
                 "price INTEGER NOT NULL," +
                 "image INTEGER NOT NULL" +

@@ -38,10 +38,10 @@ public class Activity_Summary extends AppCompatActivity {
                 cartObjects.add(new Object_Cart(
                         resultSet.getInt(0),
                         resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getInt(3),
-                        resultSet.getInt(4),
-                        resultSet.getInt(5)
+                        resultSet.getString(3),
+                        resultSet.getInt(5),
+                        resultSet.getInt(6),
+                        resultSet.getInt(7)
                 ));
             } while (resultSet.moveToNext());
         }
@@ -53,7 +53,9 @@ public class Activity_Summary extends AppCompatActivity {
         cart.execSQL("CREATE TABLE IF NOT EXISTS cart(" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                 "product_id INTEGER NOT NULL, " +
+                "product_id_size VARCHAR NOT NULL, " +
                 "product_name VARCHAR NOT NULL, " +
+                "product_model VARCHAR, " +
                 "count INTEGER NOT NULL," +
                 "price INTEGER NOT NULL," +
                 "image INTEGER NOT NULL" +

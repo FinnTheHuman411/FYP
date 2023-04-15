@@ -35,6 +35,8 @@
             android:label="About This App"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Preview_Mode"
             android:label="AR Mode"/>
+        <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Preview_Cart"
+            android:label="AR Mode"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Main"
             android:exported="true"
             android:theme="@style/SplashScreen">

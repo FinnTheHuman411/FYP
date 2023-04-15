@@ -51,12 +51,12 @@ public class Activity_ShoppingCart extends AppCompatActivity {
                         resultSet.getInt(0),
                         resultSet.getInt(1),
                         resultSet.getString(3),
-                        resultSet.getInt(4),
                         resultSet.getInt(5),
-                        resultSet.getInt(6)
+                        resultSet.getInt(6),
+                        resultSet.getInt(7)
                 ));
 
-                totalPrice += resultSet.getInt(4) * resultSet.getInt(5);
+                totalPrice += resultSet.getInt(5) * resultSet.getInt(6);
             } while (resultSet.moveToNext());
         }
 
@@ -69,6 +69,19 @@ public class Activity_ShoppingCart extends AppCompatActivity {
         resultSet.moveToFirst();
         if (resultSet.getCount() != 0){
             Intent i = new Intent(this, Activity_Checkout.class);
+            startActivity(i);
+            finish();
+        } else {
+            Toast.makeText(getApplicationContext(), "You must add product before checkout.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void goToPreview(View v){
+        SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
+        Cursor resultSet = cart.rawQuery("Select * from cart",null);
+        resultSet.moveToFirst();
+        if (resultSet.getCount() != 0){
+            Intent i = new Intent(this, Activity_Preview_Cart.class);
             startActivity(i);
             finish();
         } else {

@@ -97,7 +97,7 @@ public class Activity_FoodPage extends AppCompatActivity {
             cv.put("count", cursor.getInt(4) + 1);
             cart.update("cart", cv, "product_id_size = ?", new String [] {productid_size});
         } else {
-            cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, price, image) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', " + price + ", " + image +" );");
+            cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, product_model, price, image) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', '"+ product_model +"', " + price + ", " + image +" );");
 
         }
 
