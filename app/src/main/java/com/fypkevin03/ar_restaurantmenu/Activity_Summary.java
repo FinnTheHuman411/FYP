@@ -41,7 +41,8 @@ public class Activity_Summary extends AppCompatActivity {
                         resultSet.getString(3),
                         resultSet.getInt(5),
                         resultSet.getInt(6),
-                        resultSet.getInt(7)
+                        resultSet.getInt(7),
+                        resultSet.getString(9)
                 ));
             } while (resultSet.moveToNext());
         }
@@ -58,7 +59,9 @@ public class Activity_Summary extends AppCompatActivity {
                 "product_model VARCHAR, " +
                 "count INTEGER NOT NULL," +
                 "price INTEGER NOT NULL," +
-                "image INTEGER NOT NULL" +
+                "image INTEGER NOT NULL," +
+                "scale DOUBLE NOT NULL," +
+                "note VARCHAR" +
                 ");");
         finish();
     }

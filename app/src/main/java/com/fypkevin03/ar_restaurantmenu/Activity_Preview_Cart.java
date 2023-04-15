@@ -153,9 +153,12 @@ public class Activity_Preview_Cart extends AppCompatActivity implements
         View view = getLayoutInflater().inflate(R.layout.bottom_preview_cart_config,null,false);
         configWindow.setContentView(view);
 
+        Button clearModel = (Button) view.findViewById(R.id.clearModel);
+
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
         ArrayList<String> values = new ArrayList<String>();
         ArrayList<String> food_models = new ArrayList<String>();
+        ArrayList<Double> food_size = new ArrayList<Double>();
         Cursor resultSet = cart.rawQuery("Select * from cart",null);
         resultSet.moveToFirst();
 
@@ -165,6 +168,7 @@ public class Activity_Preview_Cart extends AppCompatActivity implements
             do{
                 values.add(resultSet.getString(3) + " x" + resultSet.getString(5));
                 food_models.add(resultSet.getString(4));
+                food_size.add(resultSet.getDouble(8));
             } while (resultSet.moveToNext());
         }
 
@@ -177,7 +181,19 @@ public class Activity_Preview_Cart extends AppCompatActivity implements
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                modelScale = food_size.get(position).floatValue();
                 loadModels(food_models.get(position));
+            }
+        });
+
+        clearModel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arFragment.getArSceneView().getScene().callOnHierarchy(node -> {
+                    if (node instanceof AnchorNode) {
+                        ((AnchorNode) node).getAnchor().detach();
+                    }
+                });
             }
         });
     }

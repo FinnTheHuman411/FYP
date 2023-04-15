@@ -33,14 +33,16 @@ public class Adapter_Summary extends ArrayAdapter<Object_Cart> {
         }
 
         // Lookup view for data population
-        TextView tv_product_name = (TextView) convertView.findViewById(R.id.summary_product_name);
-        final TextView tv_price = (TextView) convertView.findViewById(R.id.summary_price);
-        final TextView tv_count = (TextView) convertView.findViewById(R.id.summary_count);
+        TextView food_product_name = (TextView) convertView.findViewById(R.id.summary_product_name);
+        final TextView food_price = (TextView) convertView.findViewById(R.id.summary_price);
+        final TextView food_count = (TextView) convertView.findViewById(R.id.summary_count);
+        final TextView food_note = (TextView) convertView.findViewById(R.id.summary_note);
 
         // Populate the data into the template view using the data object
-        tv_product_name.setText(obj.product_name);
-        tv_price.setText("Price: $" + obj.price);
-        tv_count.setText("Count: " + obj.count);
+        food_product_name.setText(obj.product_name);
+        food_price.setText("Price: $" + obj.price);
+        food_count.setText("Count: " + obj.count);
+        food_note.setText("Note: " + obj.note);
 
 
         // Return the completed view to render on screen

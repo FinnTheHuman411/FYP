@@ -53,7 +53,8 @@ public class Activity_ShoppingCart extends AppCompatActivity {
                         resultSet.getString(3),
                         resultSet.getInt(5),
                         resultSet.getInt(6),
-                        resultSet.getInt(7)
+                        resultSet.getInt(7),
+                        resultSet.getString(9)
                 ));
 
                 totalPrice += resultSet.getInt(5) * resultSet.getInt(6);

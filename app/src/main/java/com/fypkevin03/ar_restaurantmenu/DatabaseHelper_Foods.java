@@ -14,7 +14,7 @@ import java.util.Random;
 public class DatabaseHelper_Foods extends SQLiteOpenHelper {
     Context mContext;
     public DatabaseHelper_Foods(@Nullable Context context) {
-        super(context, "Foods.db", null, 3);
+        super(context, "Foods.db", null, 4);
         mContext = context;
     }
 
@@ -22,7 +22,7 @@ public class DatabaseHelper_Foods extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table foods(_id INTEGER, product_id INTEGER primary key, product_name VARCHAR, genre VARCHAR, product_info VARCHAR, price DOUBLE, image INTEGER, product_model VARCHAR)");
+        db.execSQL("Create table foods(_id INTEGER, product_id INTEGER primary key, product_name VARCHAR, genre VARCHAR, product_info VARCHAR, price DOUBLE, image INTEGER, product_model VARCHAR, size_s DOUBLE, size_l DOUBLE)");
     }
 
     @Override
@@ -33,7 +33,7 @@ public class DatabaseHelper_Foods extends SQLiteOpenHelper {
     }
 
     //inserting in database
-    public boolean insert(Integer product_id, String product_name, String genre, String product_info, Double price, Integer image, String product_model){
+    public boolean insert(Integer product_id, String product_name, String genre, String product_info, Double price, Integer image, String product_model, Double size_s, Double size_l){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("_id", id);
@@ -44,38 +44,11 @@ public class DatabaseHelper_Foods extends SQLiteOpenHelper {
         contentValues.put("price", price);
         contentValues.put("image", image);
         contentValues.put("product_model", product_model);
+        contentValues.put("size_s", size_s);
+        contentValues.put("size_l", size_l);
         long ins =db.insert("foods", null, contentValues);
         if (ins == -1) return false;
         else return true;
     }
-    //checking if username exists
-    /*
-    public Boolean chkusername(String username){
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("Select * from user where username=?", new String [] {username});
-        if (cursor.getCount() > 0) return false;
-        else return true;
-    }
-    //checking the username and password
-    public Boolean emailpassword(String username, String password){
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select * from user where username=? and password=?", new String[]{username,password});
-        if (cursor.getCount()>0) return true;
-        else return false;
-    }
-
-    public Cursor getInfo(String key_username){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from user where username =?" , new String[]{key_username});
-        return cursor;
-    }
-    */
-
-//    public void add_to_shopping_cart(int product_id, int count, String product_name, int price) {
-//        SQLiteDatabase cart = this.getWritableDatabase();
-//        cart.execSQL("INSERT INTO cart (product_id, count, product_name, price) VALUES(" + product_id + ", " + count + ", '" + product_name + "', " + price + ");");
-////
-////        Toast.makeText(mContext, product_name + " has been added to cart.",Toast.LENGTH_SHORT).show();
-//    }
 
 }

@@ -22,6 +22,7 @@ public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
     public Context mContext;
     double price;
     int count;
+    String note;
 
     public Adapter_Cart(@NonNull Context context, ArrayList<Object_Cart> cartObjects) {
         super(context, 0, cartObjects);
@@ -45,14 +46,17 @@ public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
         TextView food_product_name = (TextView) convertView.findViewById(R.id.comment_username);
         final TextView food_price = (TextView) convertView.findViewById(R.id.content);
         final TextView food_count = (TextView) convertView.findViewById(R.id.count);
+        final TextView food_note = (TextView) convertView.findViewById(R.id.note);
 
         // Populate the data into the template view using the data object
         food_product_image.setImageResource(obj.image);
         food_product_name.setText(obj.product_name);
         price = obj.price;
         count = obj.count;
+        note = obj.note;
         food_price.setText("Price: $" + price);
         food_count.setText("Count: " + count);
+        food_note.setText("Note: " + note);
 
 
         //button
@@ -73,6 +77,7 @@ public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
                 int position = (Integer) view.getTag();
                 // Access the row position here to get the correct data item
                 Object_Cart object = getItem(position);
+                ((Activity_ShoppingCart) getContext()).setTotalPrice(((Activity_ShoppingCart) getContext()).getTotalPrice()-(obj.price*obj.count));
                 remove(object);
 
                 SQLiteDatabase cart = mContext.openOrCreateDatabase("cart",mContext.MODE_PRIVATE,null);
@@ -87,13 +92,13 @@ public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
                 int position = (Integer) view.getTag();
                 // Access the row position here to get the correct data item
                 Object_Cart object = getItem(position);
-                count = count+1;
-                food_count.setText("Count: " + count);
+                obj.count = obj.count+1;
+                food_count.setText("Count: " + obj.count);
                 ((Activity_ShoppingCart) getContext()).setTotalPrice(((Activity_ShoppingCart) getContext()).getTotalPrice()+obj.price);
 
                 SQLiteDatabase cart = mContext.openOrCreateDatabase("cart",mContext.MODE_PRIVATE,null);
                 ContentValues cv = new ContentValues();
-                cv.put("count", count);
+                cv.put("count", obj.count);
                 cart.update("cart", cv, "_id = ?", new String [] {Integer.toString(object.cartID)});
             }
         });
@@ -105,14 +110,14 @@ public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
                 int position = (Integer) view.getTag();
                 // Access the row position here to get the correct data item
                 Object_Cart object = getItem(position);
-                if (count > 1) {
-                    count = count-1;
-                    food_count.setText("Count: " + count);
+                if (obj.count > 1) {
+                    obj.count = obj.count-1;
+                    food_count.setText("Count: " + obj.count);
                     ((Activity_ShoppingCart) getContext()).setTotalPrice(((Activity_ShoppingCart) getContext()).getTotalPrice()-obj.price);
 
                     SQLiteDatabase cart = mContext.openOrCreateDatabase("cart",mContext.MODE_PRIVATE,null);
                     ContentValues cv = new ContentValues();
-                    cv.put("count", count);
+                    cv.put("count", obj.count);
                     cart.update("cart", cv, "_id = ?", new String [] {Integer.toString(object.cartID)});
                 }
             }

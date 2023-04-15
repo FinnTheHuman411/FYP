@@ -10,7 +10,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -52,7 +54,6 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
     BottomSheetDialog configWindow;
     private float modelScale = 1;
     private String foodSize = "M";
-
     private String product_model = "";
 
     @Override
@@ -161,19 +162,27 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.sizeSelect);
         Button clearModel = (Button) view.findViewById(R.id.clearModel);
         Button addToCart = (Button) view.findViewById(R.id.addToCart);
+        EditText noteEdit = (EditText) view.findViewById(R.id.editTextNote);
+        TextView foodPriceView = (TextView) view.findViewById(R.id.foodPrice);
+
+        final double product_size_s = getIntent().getDoubleExtra("product_size_s",0);
+        final double product_size_l = getIntent().getDoubleExtra("product_size_l",0);
+        final String foodPrice = getIntent().getStringExtra("price");
+
+        foodPriceView.setText("Price: $" + foodPrice);
 
             radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
                     // checkedId is the RadioButton selected
                     if (checkedId == R.id.radioButton) {
-                        modelScale = 0.75f;
+                        modelScale = (float)product_size_s;
                         foodSize = "S";
                     } else if (checkedId == R.id.radioButton2) {
                         modelScale = 1f;
                         foodSize = "M";
                     } else if (checkedId == R.id.radioButton3) {
-                        modelScale = 1.25f;
+                        modelScale = (float)product_size_l;
                         foodSize = "L";
                     }
                 }
@@ -198,6 +207,8 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
                 final String price = getIntent().getStringExtra("price");
                 final int food_image = getIntent().getIntExtra("food_image",0);
                 String product_name_size = product_name;
+                String note = noteEdit.getText().toString();
+                Double modelScaleDouble = (double)modelScale;
 
                 if (foodSize == "S") {
                     product_name_size = product_name + " Small";
@@ -207,7 +218,7 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
                     product_name_size = product_name + " Large";
                 }
 
-                add_to_shopping_cart(product_id, product_name_size, Double.parseDouble(price), food_image);
+                add_to_shopping_cart(product_id, product_name_size, Double.parseDouble(price), food_image, modelScaleDouble, note);
             }
         });
     }
@@ -216,21 +227,21 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
         configWindow.show();
     }
 
-    public void add_to_shopping_cart(int product_id, String product_name, double price, int image){
+    public void add_to_shopping_cart(int product_id, String product_name, double price, int image, double scale, String note){
         String productid_size = product_id + foodSize;
 
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
-        Cursor cursor = cart.rawQuery("Select * from cart where product_id_size=?", new String [] {productid_size});
+        //Cursor cursor = cart.rawQuery("Select * from cart where product_id_size=?", new String [] {productid_size});
 
-        if (cursor.getCount()>0) {
+        /*if (cursor.getCount()>0) {
             cursor.moveToFirst();
             ContentValues cv = new ContentValues();
             cv.put("count", cursor.getInt(4) + 1);
             cart.update("cart", cv, "product_id_size = ?", new String [] {productid_size});
-        } else {
-            cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, product_model, price, image) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', '"+ product_model +"', " + price + ", " + image +" );");
+        } else {*/
+        cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, product_model, price, image, scale, note) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', '"+ product_model +"', " + price + ", " + image +" , "+ scale +" , '" + note + "');");
 
-        }
+        //}
 
         Toast.makeText(getApplicationContext(), product_name + " has been added to cart.",Toast.LENGTH_SHORT).show();
     }
