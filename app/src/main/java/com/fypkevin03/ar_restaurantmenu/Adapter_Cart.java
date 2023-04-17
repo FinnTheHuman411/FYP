@@ -17,6 +17,8 @@ import java.util.ArrayList;
 
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
+import com.bumptech.glide.Glide;
+
 public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
 
     public Context mContext;
@@ -49,7 +51,7 @@ public class Adapter_Cart extends ArrayAdapter<Object_Cart> {
         final TextView food_note = (TextView) convertView.findViewById(R.id.note);
 
         // Populate the data into the template view using the data object
-        food_product_image.setImageResource(obj.image);
+        Glide.with(parent).load(obj.image).into(food_product_image);
         food_product_name.setText(obj.product_name);
         price = obj.price;
         count = obj.count;

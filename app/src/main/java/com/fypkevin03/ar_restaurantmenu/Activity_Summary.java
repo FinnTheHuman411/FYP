@@ -41,7 +41,7 @@ public class Activity_Summary extends AppCompatActivity {
                         resultSet.getString(3),
                         resultSet.getInt(5),
                         resultSet.getInt(6),
-                        resultSet.getInt(7),
+                        resultSet.getString(7),
                         resultSet.getString(9)
                 ));
             } while (resultSet.moveToNext());

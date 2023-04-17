@@ -17,9 +17,9 @@ public class Activity_Main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         fdb = new DatabaseHelper_Foods(this);
-        fdb.insert(1001, "Pepperoni Pizza", "Main", "Pizza", 75.0, R.drawable.fd1, "1001.glb", 0.75, 1.25);
-        fdb.insert(1002, "Cheezburger", "Main", "Hamburger", 35.0, R.drawable.fd2, "1002.glb", 0.75, 1.25);
-        fdb.insert(4002, "Coke", "Drink", "Soft Drink", 7.0, R.drawable.bv2, null, 0.75, 1.25);
+        fdb.insert(1001, "Pepperoni Pizza", "Main", "Pizza", 75.0, "https://i.imgur.com/y0XhePO.jpg", "1001.glb", 0.75, 1.25);
+        fdb.insert(1002, "Cheezburger", "Main", "Hamburger", 35.0, "https://i.imgur.com/oME0yKd.jpg", "1002.glb", 0.75, 1.25);
+        fdb.insert(4002, "Coke", "Drink", "Soft Drink", 7.0, "https://i.imgur.com/mfjRhVm.png", null, 0.75, 1.25);
 
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
         cart.execSQL("DROP TABLE IF EXISTS cart;");
@@ -31,7 +31,7 @@ public class Activity_Main extends AppCompatActivity {
                 "product_model VARCHAR, " +
                 "count INTEGER NOT NULL," +
                 "price INTEGER NOT NULL," +
-                "image INTEGER NOT NULL," +
+                "image VARCHAR NOT NULL," +
                 "scale DOUBLE NOT NULL," +
                 "note VARCHAR" +
                 ");");

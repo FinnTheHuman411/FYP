@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="314dp"
                 android:layout_weight="1"
-                android:src="@drawable/fd1"
+                android:src="@drawable/ms1"
                 tools:ignore="MissingConstraints" />
 
             <Space

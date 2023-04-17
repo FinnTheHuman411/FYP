@@ -14,7 +14,7 @@ import java.util.Random;
 public class DatabaseHelper_Foods extends SQLiteOpenHelper {
     Context mContext;
     public DatabaseHelper_Foods(@Nullable Context context) {
-        super(context, "Foods.db", null, 4);
+        super(context, "Foods.db", null, 5);
         mContext = context;
     }
 
@@ -22,7 +22,7 @@ public class DatabaseHelper_Foods extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table foods(_id INTEGER, product_id INTEGER primary key, product_name VARCHAR, genre VARCHAR, product_info VARCHAR, price DOUBLE, image INTEGER, product_model VARCHAR, size_s DOUBLE, size_l DOUBLE)");
+        db.execSQL("Create table foods(_id INTEGER, product_id INTEGER primary key, product_name VARCHAR, genre VARCHAR, product_info VARCHAR, price DOUBLE, image VARCHAR, product_model VARCHAR, size_s DOUBLE, size_l DOUBLE)");
     }
 
     @Override
@@ -33,7 +33,7 @@ public class DatabaseHelper_Foods extends SQLiteOpenHelper {
     }
 
     //inserting in database
-    public boolean insert(Integer product_id, String product_name, String genre, String product_info, Double price, Integer image, String product_model, Double size_s, Double size_l){
+    public boolean insert(Integer product_id, String product_name, String genre, String product_info, Double price, String image, String product_model, Double size_s, Double size_l){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("_id", id);

@@ -21,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +53,7 @@ public class Activity_Homepage extends AppCompatActivity {
             do{
                 listItems.add(new Object_Food(
                         resultSet.getInt(1),
-                        resultSet.getInt(6),
+                        resultSet.getString(6),
                         resultSet.getString(2),
                         "$" + resultSet.getString(5),
                         resultSet.getString(3)
@@ -146,7 +148,7 @@ public class Activity_Homepage extends AppCompatActivity {
             TextView movieGenre = view.findViewById(R.id.FoodType);
 
             final int key_foodID = foodModelListFiltered.get(i).getFoodID();
-            imageView.setImageResource(foodModelListFiltered.get(i).getImage());
+            Glide.with(view).load(foodModelListFiltered.get(i).getImage()).into(imageView);
             movieName.setText(foodModelListFiltered.get(i).getFoodName());
             moviePrice.setText(foodModelListFiltered.get(i).getFoodPrice());
             movieGenre.setText(foodModelListFiltered.get(i).getFoodType());

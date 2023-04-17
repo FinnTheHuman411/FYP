@@ -16,12 +16,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
+
 public class Activity_FoodPage extends AppCompatActivity {
 
-    int food_image, product_id;
+    int product_id;
     double product_size_s, product_size_l;
     double modelScale = 1;
-    String price, product_name, product_model;
+    String price, product_name, product_model, food_image;
     private String foodSize = "M";
     EditText noteEdit;
 
@@ -47,14 +49,14 @@ public class Activity_FoodPage extends AppCompatActivity {
 
         if (product_id != 0) {
             resultSet.moveToFirst();
-            food_image = resultSet.getInt(6);
+            food_image = resultSet.getString(6);
             price = resultSet.getString(5);
             product_name = resultSet.getString(2);
             product_model = resultSet.getString(7);
             product_size_s = resultSet.getDouble(8);
             product_size_l = resultSet.getDouble(9);
 
-            image.setImageResource(food_image);
+            Glide.with(this).load(food_image).into(image);
             foodName.setText(product_name);
             basicInfo.setText("Price: $" + price);
         }
@@ -132,7 +134,7 @@ public class Activity_FoodPage extends AppCompatActivity {
         add_to_shopping_cart(product_id, product_name_size, Double.parseDouble(price), food_image, modelScaleDouble, note);
     }
 
-    public void add_to_shopping_cart(int product_id, String product_name, double price, int image, double scale, String note){
+    public void add_to_shopping_cart(int product_id, String product_name, double price, String image, double scale, String note){
         String productid_size = product_id + foodSize;
 
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
@@ -144,7 +146,7 @@ public class Activity_FoodPage extends AppCompatActivity {
             cv.put("count", cursor.getInt(4) + 1);
             cart.update("cart", cv, "product_id_size = ?", new String [] {productid_size});
         } else {*/
-        cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, product_model, price, image, scale, note) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', '"+ product_model +"', " + price + ", " + image +" , "+ scale +" , '" + note + "');");
+        cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, product_model, price, image, scale, note) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', '"+ product_model +"', " + price + ", '" + image + "' , "+ scale +" , '" + note + "');");
 
         //}
 
