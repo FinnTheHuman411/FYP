@@ -15,43 +15,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33431c9-984a-42ff-be78-5375410b5009" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/fyp_kevin03_ar_restaurant_menu.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/fyp_kevin03_ar_restaurant_menu.app.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/fyp_kevin03_ar_restaurant_menu.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/fyp_kevin03_ar_restaurant_menu.app.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/fyp_kevin03_ar_restaurant_menu.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/fyp_kevin03_ar_restaurant_menu.app.unitTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_camera_alt_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_FoodPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_FoodPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Homepage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_ShoppingCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Summary.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Summary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Adapter_Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Adapter_Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/DatabaseHelper_Foods.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/DatabaseHelper_Foods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Object_Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Object_Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Object_Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Object_Food.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bv2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fd1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/fd2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_foodpage.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_foodpage.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/food_preview_grid.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/food_preview_grid.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,10 +95,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SHOW_ALL_PROCESSES": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
-    "last_opened_file_path": "C:/Users/lbens/Documents/GitHub/FYP",
+    "last_opened_file_path": "C:/Users/lbens/Desktop/2",
     "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
 }]]></component>
