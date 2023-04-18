@@ -23,7 +23,7 @@ public class Activity_FoodPage extends AppCompatActivity {
     int product_id;
     double product_size_s, product_size_l;
     double modelScale = 1;
-    String price, product_name, product_model, food_image;
+    String price, product_name, product_model, food_image, product_type, description;
     private String foodSize = "M";
     EditText noteEdit;
 
@@ -52,13 +52,15 @@ public class Activity_FoodPage extends AppCompatActivity {
             food_image = resultSet.getString(6);
             price = resultSet.getString(5);
             product_name = resultSet.getString(2);
+            product_type = resultSet.getString(3);
+            description = resultSet.getString(4);
             product_model = resultSet.getString(7);
             product_size_s = resultSet.getDouble(8);
             product_size_l = resultSet.getDouble(9);
 
             Glide.with(this).load(food_image).into(image);
             foodName.setText(product_name);
-            basicInfo.setText("Price: $" + price);
+            basicInfo.setText("Price: $" + price + "\n" + "Type: " + product_type + "\n" + "Info: " + description);
         }
 
 
