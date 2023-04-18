@@ -21,11 +21,11 @@ import java.util.regex.Pattern;
 public class Activity_Admin_AC_Add extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     DatabaseHelper_Account db;
-    EditText e1, e2, e3, e4, e5;
+    EditText e1, e2, e3;
     Button b1;
     TextView t1;
 
-    String s1,s2,s3,s4, s5;
+    String s1,s2,s3;
     Boolean chkusername;
 
 
@@ -40,10 +40,8 @@ public class Activity_Admin_AC_Add extends AppCompatActivity implements AdapterV
 
         db = new DatabaseHelper_Account(this);
         e1 = (EditText)findViewById(R.id.username);
-        e2 = (EditText)findViewById(R.id.email);
-        e3 = (EditText)findViewById(R.id.age);
-        e4 = (EditText)findViewById(R.id.pass);
-        e5 = (EditText)findViewById(R.id.cpass);
+        e2 = (EditText)findViewById(R.id.pass);
+        e3 = (EditText)findViewById(R.id.cpass);
         b1 = (Button) findViewById(R.id.register);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,27 +49,18 @@ public class Activity_Admin_AC_Add extends AppCompatActivity implements AdapterV
                 s1 = e1.getText().toString();
                 s2 = e2.getText().toString();
                 s3 = e3.getText().toString();
-                s4 = e4.getText().toString();
-                s5 = e5.getText().toString();
 
                 chkusername = db.chkusername(s1);
 
-                String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-                Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-                Matcher matcher = pattern.matcher(s2);
-
-                if (s1.equals("") || s2.equals("") || s3.equals("") || s4.equals("") || s5.equals("")){
+                if (s1.equals("") || s2.equals("") || s3.equals("")){
                     Toast.makeText(getApplicationContext(), "Fields are empty", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    if(s4.equals(s5)){
+                    if(s2.equals(s3)){
                         if(chkusername == false){
                             Toast.makeText(getApplicationContext(), "User Name Already exists", Toast.LENGTH_SHORT).show();
-                        }
-                        else if (matcher.matches() == false){
-                            Toast.makeText(getApplicationContext(), "Invalid email format", Toast.LENGTH_SHORT).show();
                         } else {
-                            new Activity_Admin_AC_Add();
+                            new SignUpTask().execute();
                         }
                     }
                     else {
@@ -80,13 +69,6 @@ public class Activity_Admin_AC_Add extends AppCompatActivity implements AdapterV
                 }
             }
         });
-
-        // Spinner
-        Spinner Role_Spinner = findViewById(R.id.role_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.role, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Role_Spinner.setAdapter(adapter);
-        Role_Spinner.setOnItemSelectedListener(this);
     }
 
     // Sign Up Copy
@@ -103,7 +85,7 @@ public class Activity_Admin_AC_Add extends AppCompatActivity implements AdapterV
 
         @Override
         protected String doInBackground(String... strings){
-            insert = db.insert(s1, s2, s3, s4, "admin");
+            insert = db.insert(s1, "", "", s2, "admin");
             try {
                 Thread.sleep(2500);
             } catch (InterruptedException e){

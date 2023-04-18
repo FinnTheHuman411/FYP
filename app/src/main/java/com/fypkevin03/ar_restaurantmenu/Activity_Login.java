@@ -110,6 +110,7 @@ public class Activity_Login extends AppCompatActivity {
 
     public void btn_sign_up(View v){
         Intent i = new Intent(this, Activity_Signup.class);
+        i.putExtra("mode","user");
         startActivity(i);
     }
 

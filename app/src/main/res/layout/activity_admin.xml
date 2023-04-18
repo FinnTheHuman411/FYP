@@ -30,58 +30,69 @@
                 android:layout_height="50dp"
                 android:gravity="center"
                 android:text="Choose what to do below:"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.458"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.096" />
+                android:textSize="16sp"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="30dp" />
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:id="@+id/tv_ac"
                 android:layout_width="91dp"
                 android:layout_height="30dp"
                 android:text="Account:"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="181dp" />
+                android:textSize="20sp"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="15dp" />
 
             <Button
                 android:id="@+id/btn_create_ac"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_below="@id/et_login_password"
                 android:text="Create new account"
                 android:textSize="20sp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="227dp" />
+                android:onClick="openActivity_Create_AC"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="15dp" />
+
+            <Button
+                android:id="@+id/btn_create_admin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Create new admin"
+                android:textSize="20sp"
+                android:onClick="openActivity_Create_Admin"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <Button
                 android:id="@+id/btn_edit_ac"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_below="@id/et_login_password"
                 android:text="Edit account"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="310dp" />
+                android:textSize="20sp"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="50dp" />
+                android:layout_height="30dp" />
+
+            <View
+                android:id="@+id/divider8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:id="@+id/tv_menu"
@@ -89,37 +100,39 @@
                 android:layout_height="30dp"
                 android:layout_marginEnd="307dp"
                 android:text="Menu:"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:layout_editor_absoluteY="446dp" />
+                android:textSize="20sp"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="15dp" />
 
             <Button
                 android:id="@+id/btn_create_menu"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_below="@id/et_login_password"
                 android:text="Create new food"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="488dp" />
+                android:textSize="20sp"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="15dp" />
 
             <Button
                 android:id="@+id/btn_edit_menu"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_below="@id/et_login_password"
                 android:text="Edit menu"
-                android:textSize="20sp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="569dp" />
+                android:textSize="20sp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <View
+                android:id="@+id/divider9"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
         </LinearLayout>
     </ScrollView>
 

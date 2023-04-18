@@ -44,33 +44,6 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:drawablePadding="5dp"
-                android:hint="Email Address (admin keep it blank)"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:textSize="16sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <EditText
-                android:id="@+id/age"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:hint="Age (admin keep it blank) "
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:textSize="16sp" />
-
-            <Space
-                android:layout_width="match_parent"
                 android:layout_height="10dp" />
 
             <EditText
@@ -102,16 +75,6 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textSize="16sp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="25dp" />
-
-            <Spinner
-                android:id="@+id/role_spinner"
-                android:text="[Select a Role]"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <Space
                 android:layout_width="match_parent"

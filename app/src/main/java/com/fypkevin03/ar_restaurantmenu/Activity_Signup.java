@@ -22,7 +22,6 @@ public class Activity_Signup extends AppCompatActivity {
     EditText e1, e2, e3, e4, e5;
     Button b1;
     TextView t1;
-
     String s1,s2,s3,s4, s5;
     Boolean chkusername;
 
@@ -35,12 +34,16 @@ public class Activity_Signup extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         db = new DatabaseHelper_Account(this);
+        t1 = (TextView)findViewById(R.id.signuptitle);
         e1 = (EditText)findViewById(R.id.username);
         e2 = (EditText)findViewById(R.id.email);
         e3 = (EditText)findViewById(R.id.age);
         e4 = (EditText)findViewById(R.id.pass);
         e5 = (EditText)findViewById(R.id.cpass);
         b1 = (Button) findViewById(R.id.register);
+
+        final String appMode = getIntent().getStringExtra("mode");
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

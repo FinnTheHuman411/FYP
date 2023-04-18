@@ -32,7 +32,7 @@
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_CommentSection"
             android:label="Comments"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Signup"
-            android:label="Sign Up"/>
+            android:label="Create Account"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Login"
             android:label="Login Page"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Aboutus"

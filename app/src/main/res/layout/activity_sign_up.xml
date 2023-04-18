@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Sign Up"
+                android:text="Create Account"
                 android:textSize="30sp" />
 
             <Space
