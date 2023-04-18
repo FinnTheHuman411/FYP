@@ -15,9 +15,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c33431c9-984a-42ff-be78-5375410b5009" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/baseline_camera_alt_24.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Admin_AC_Add.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Admin_AC_Edit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Admin_Menu_Add.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Admin_Menu_Edit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_admin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_admin_ac_add.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_admin_menu_add.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Signup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/DatabaseHelper_Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/DatabaseHelper_Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +111,7 @@
     "SHOW_ALL_PROCESSES": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
-    "last_opened_file_path": "C:/Users/lbens/Desktop/2",
+    "last_opened_file_path": "C:/Users/lbens/Documents/GitHub/FYP/app/src/main/res/drawable",
     "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
 }]]></component>
@@ -111,11 +123,11 @@
       <recent name="com.redfrogss.ast20207_group_project" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lbens\Documents\GitHub\FYP\app\src\main\res\drawable" />
       <recent name="C:\Users\lbens\Documents\GitHub\FYP\app\src\main\res\layout" />
+      <recent name="C:\Users\lbens\Documents\GitHub\FYP\app\src\main\java\com\fypkevin03\ar_restaurantmenu" />
       <recent name="C:\Users\lbens\Documents\GitHub\S413F_Project\app\src\main\res" />
       <recent name="C:\Users\lbens\Documents\GitHub\S413F_Project\app\src\main\res\menu" />
-      <recent name="C:\Users\lbens\Documents\GitHub\S413F_Project\app\src\main\res\layout" />
-      <recent name="C:\Users\lbens\Desktop\ouhk\S413F_Project\app\src\main\res\layout" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\lbens\Documents\GitHub\FYP\app\src\main\res\drawable" />

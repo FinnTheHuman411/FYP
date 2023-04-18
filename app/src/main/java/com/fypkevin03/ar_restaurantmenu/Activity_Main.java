@@ -9,12 +9,21 @@ import android.os.Handler;
 
 public class Activity_Main extends AppCompatActivity {
 
+    DatabaseHelper_Account usdb;
     DatabaseHelper_Foods fdb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        usdb = new DatabaseHelper_Account(this);
+        if (usdb.chkusername("admin") == true){
+            usdb.insert("admin", "admin@example.com", "20", "admin", "admin");
+        }
+        if (usdb.chkusername("testuser") == true){
+            usdb.insert("testuser", "testuser@example.com", "20", "testuser", "user");
+        }
 
         fdb = new DatabaseHelper_Foods(this);
         fdb.insert(1001, "Pepperoni Pizza", "Main", "Pizza", 75.0, "https://i.imgur.com/y0XhePO.jpg", "1001.glb", 0.75, 1.25);

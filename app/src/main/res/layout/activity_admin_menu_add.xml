@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <!--Title-->
+            <TextView
+                android:id="@+id/createFoodtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Create a Food"
+                android:textSize="30sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <!--Input Bars 1-->
+            <EditText
+                android:id="@+id/FoodName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="5dp"
+                android:hint="Food Name"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+            <!--Input Bars 2-->
+            <EditText
+                android:id="@+id/FoodPrice"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="5dp"
+                android:hint="Food Price"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+
+            <!--Input Bars 3-->
+            <EditText
+                android:id="@+id/FoodType"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Food Type"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+
+            <!--Input Bars 4-->
+            <EditText
+                android:id="@+id/foodInfo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Food Info"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+
+            <!--Input Bars 5-->
+            <EditText
+                android:id="@+id/foodImage"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableRight="@drawable/baseline_camera_alt_24"
+                android:drawablePadding="5dp"
+                android:hint="Upload Food Image (Link)"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+
+            <!--Sumbit button-->
+            <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Submit"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

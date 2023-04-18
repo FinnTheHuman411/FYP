@@ -13,6 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin"
+            android:label="Admin Panel"/>
+        <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_AC_Add"
+            android:label="Admin Add Account"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Summary"
             android:label="Summary"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Checkout"

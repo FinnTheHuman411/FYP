@@ -1,22 +1,24 @@
 package com.fypkevin03.ar_restaurantmenu;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Activity_Signup extends AppCompatActivity {
+public class Activity_Admin_AC_Add extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     DatabaseHelper_Account db;
     EditText e1, e2, e3, e4, e5;
@@ -26,11 +28,13 @@ public class Activity_Signup extends AppCompatActivity {
     String s1,s2,s3,s4, s5;
     Boolean chkusername;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_admin_ac_add);
 
+        // Sign Up Copy
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
@@ -67,7 +71,7 @@ public class Activity_Signup extends AppCompatActivity {
                         else if (matcher.matches() == false){
                             Toast.makeText(getApplicationContext(), "Invalid email format", Toast.LENGTH_SHORT).show();
                         } else {
-                            new SignUpTask().execute();
+                            new Activity_Admin_AC_Add();
                         }
                     }
                     else {
@@ -76,22 +80,30 @@ public class Activity_Signup extends AppCompatActivity {
                 }
             }
         });
+
+        // Spinner
+        Spinner Role_Spinner = findViewById(R.id.role_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.role, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Role_Spinner.setAdapter(adapter);
+        Role_Spinner.setOnItemSelectedListener(this);
     }
 
+    // Sign Up Copy
     class SignUpTask extends AsyncTask<String, Void, String > {
         ProgressDialog progressDialog;
         Boolean insert;
 
         @Override
         protected void onPreExecute(){
-            progressDialog = ProgressDialog.show(Activity_Signup.this,
+            progressDialog = ProgressDialog.show(Activity_Admin_AC_Add.this,
                     "Creating a new account",
                     "Loading, please wait...");
         }
 
         @Override
         protected String doInBackground(String... strings){
-            insert = db.insert(s1, s2, s3, s4, "user");
+            insert = db.insert(s1, s2, s3, s4, "admin");
             try {
                 Thread.sleep(2500);
             } catch (InterruptedException e){
@@ -118,4 +130,18 @@ public class Activity_Signup extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+    // Spinner
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        String text = adapterView.getItemAtPosition(i).toString();
+        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
 }

@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Restaurant Menu</string>
     <string name="name" />
+
+    <string-array name="role">
+        <item>User</item>
+        <item>Admin</item>
+    </string-array>
 </resources>

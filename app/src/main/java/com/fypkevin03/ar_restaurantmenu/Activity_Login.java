@@ -68,11 +68,19 @@ public class Activity_Login extends AppCompatActivity {
         protected void onPostExecute(String s){
             progressDialog.dismiss();
             if (Chkemailpass == true) {
-                Intent i = new Intent(Activity_Login.this, Activity_Homepage.class);      //if login success then jump to Main page
-                i.putExtra("username",username);
-                startActivity(i);
-                Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
-                finish();
+                if (db.chkadminrole(username) == true) {
+                    Intent i = new Intent(Activity_Login.this, Activity_Admin.class);      //if login (admin) success then jump to Admin page
+                    i.putExtra("username",username);
+                    startActivity(i);
+                    Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
+                    finish();
+                } else {
+                    Intent i = new Intent(Activity_Login.this, Activity_Homepage.class);      //if login (user) success then jump to Main page
+                    i.putExtra("username",username);
+                    startActivity(i);
+                    Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
             else{
                 Toast.makeText(Activity_Login.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
