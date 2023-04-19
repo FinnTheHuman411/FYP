@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:text="Email:" />
             <TextView
-                android:id="@+id/tv_userinfo_pw"
+                android:id="@+id/tv_userinfo_em"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:text="Password:" />
             <TextView
-                android:id="@+id/tv_userinfo_em"
+                android:id="@+id/tv_userinfo_pw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

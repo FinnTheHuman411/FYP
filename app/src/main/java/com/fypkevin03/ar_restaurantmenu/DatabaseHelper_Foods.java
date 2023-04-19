@@ -18,8 +18,6 @@ public class DatabaseHelper_Foods extends SQLiteOpenHelper {
         mContext = context;
     }
 
-    final int id = new Random().nextInt((9999 - 1000) + 1) + 1000;
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("Create table foods(_id INTEGER, product_id INTEGER primary key, product_name VARCHAR, genre VARCHAR, product_info VARCHAR, price DOUBLE, image VARCHAR, product_model VARCHAR, size_s DOUBLE, size_l DOUBLE)");
@@ -36,6 +34,7 @@ public class DatabaseHelper_Foods extends SQLiteOpenHelper {
     public boolean insert(Integer product_id, String product_name, String genre, String product_info, Double price, String image, String product_model, Double size_s, Double size_l){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        final int id = new Random().nextInt((9999 - 1000) + 1) + 1000;
         contentValues.put("_id", id);
         contentValues.put("product_id", product_id);
         contentValues.put("product_name", product_name);

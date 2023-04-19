@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Activity_Admin_AC_Add extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Activity_Admin_AC_Add extends AppCompatActivity {
 
     DatabaseHelper_Account db;
     EditText e1, e2, e3;
@@ -111,19 +111,6 @@ public class Activity_Admin_AC_Add extends AppCompatActivity implements AdapterV
             finish();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-
-    // Spinner
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String text = adapterView.getItemAtPosition(i).toString();
-        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 
 }

@@ -70,7 +70,7 @@ public class Activity_Login extends AppCompatActivity {
             if (Chkemailpass == true) {
                 if (db.chkadminrole(username) == true) {
                     Intent i = new Intent(Activity_Login.this, Activity_Admin.class);      //if login (admin) success then jump to Admin page
-                    i.putExtra("username",username);
+                    i.putExtra("currentUser",db.getUserId(username));
                     startActivity(i);
                     Toast.makeText(getApplicationContext(), "Successfully Login", Toast.LENGTH_SHORT).show();
                     finish();
