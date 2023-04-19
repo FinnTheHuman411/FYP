@@ -74,7 +74,7 @@ public class Activity_FoodPage extends AppCompatActivity {
 
         if (ratingCursor.getCount() != 0){
             do{
-                rating = rating + ratingCursor.getDouble(3);
+                rating = rating + ratingCursor.getDouble(4);
                 totalRated++;
             } while (ratingCursor.moveToNext());
             rating = rating / totalRated;
@@ -96,7 +96,7 @@ public class Activity_FoodPage extends AppCompatActivity {
                         cv.put("rating", ratingValue);
                         ratings.update("ratings", cv, "username = ? AND product_id = ?", new String [] {key_username, Integer.toString(product_id)});
                     } else {
-                        ratings.execSQL("INSERT INTO ratings (product_id, username, rating) VALUES(" + product_id + ", '" + key_username + "', " + ratingValue + ");");
+                        ratings.execSQL("INSERT INTO ratings (product_id, genre, username, rating) VALUES(" + product_id + ", '" + product_type + "', '" + key_username + "', " + ratingValue + ");");
                     }
                 } else {
                     Toast.makeText(getApplicationContext(), "You can only rate after logging in!",Toast.LENGTH_SHORT).show();

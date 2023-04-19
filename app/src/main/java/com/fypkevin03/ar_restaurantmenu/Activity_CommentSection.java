@@ -72,6 +72,7 @@ public class Activity_CommentSection extends AppCompatActivity {
         cmstr = cm.getText().toString();
         if (cmstr != null) {
             add_to_comment_database(product_id, key_username, cmstr);
+            cm.getText().clear();
         }
     }
 

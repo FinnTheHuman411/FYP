@@ -22,21 +22,26 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Arrays.*;
 
 public class Activity_ShoppingCart extends AppCompatActivity {
 
-
+    DatabaseHelper_Foods db;
     public double totalPrice = 0;
     RecyclerView rv;
-    List<Object_Food> listItems = new ArrayList<>();
+    Double[] listScore;
+    String[] listGenre;
     int key_foodID;
     Adapter_Recommender recommenderAdapter;
+    String[] FoodTypeList;
+    Double[] FoodTypeListScore ;
 
     //20230418 Collaborative Filtering
-    Map<String, Float> FoodTypeScore;
+    Map<String, Double> FoodIDScore;
     //<UserID, <FoodID, Rating> >
 //    Map<Integer, HashMap<Integer, Double>> data;
     @Override
@@ -85,19 +90,33 @@ public class Activity_ShoppingCart extends AppCompatActivity {
         //20230418 rating
         SQLiteDatabase ratings = openOrCreateDatabase("ratings",MODE_PRIVATE,null);
         Bundle extras = getIntent().getExtras();
+        SQLiteDatabase foodTypes = openOrCreateDatabase("foods",MODE_PRIVATE,null);
+//        FoodTypeScore
 
-        final String key_username = getIntent().getStringExtra("username");   //Pass from LoginActivity
+        final String key_username = getIntent().getStringExtra("username");   //Pass from HomePageActivity
 
         if (key_username != null) {
-            Cursor ratingCursor = ratings.rawQuery("Select product_id, rating from ratings where username = ?", new String[] {key_username});
+            Cursor ratingCursor = ratings.rawQuery("Select genre, rating from ratings where username = ? group by genre", new String[] {key_username});
             //0  : _id,
             //1 : product_id
             //2 : username
             //3 : rating
+
+            //GetFoodType
+            db = new DatabaseHelper_Foods(this);
+
+
             ratingCursor.moveToFirst();
             if (ratingCursor.getCount() != 0) {
+                listScore = new Double[ratingCursor.getCount()];
+                listGenre = new String[ratingCursor.getCount()];
+
+                int i = 0;
                 do {
-                    FoodTypeScore.put(ratingCursor.getString(2), ratingCursor.getFloat(3));
+                    listScore[i] =  ratingCursor.getDouble(1);
+                    listGenre[i] = ratingCursor.getString(0);
+                    i++;
+
 //                    listItems.add(new Object_Food(
 //                            resultSetRecommender.getInt(1),
 //                            resultSetRecommender.getString(6),
@@ -106,49 +125,87 @@ public class Activity_ShoppingCart extends AppCompatActivity {
 //                            resultSetRecommender.getString(3)
 
                 } while (ratingCursor.moveToNext());
+            } else {
+                rollbackRecommender();
+                return;
             }
+
+            //FoodTypeCursor = <product_id, foodType>
+            //
+//            FoodTypeList = new String[db.getFoodTypeCount()];
+//            FoodTypeListScore = new Integer[db.getFoodTypeCount()];
+
+            FoodTypeListScore = new Double[db.getFoodTypeCount()];
+            for(int i = 0; i < FoodTypeListScore.length; i++) {
+                FoodTypeListScore[i] = 0.0;
+            }
+
+            Cursor FoodTypeCursor = ratings.rawQuery("Select rating, genre from ratings where username = ? group by genre", new String[] {key_username});
+            FoodTypeList = db.getFoodTypeList();
+            FoodTypeCursor.moveToFirst();
+            if (FoodTypeCursor.getCount() != 0) {
+                do {
+                    for (int i = 0; i < FoodTypeList.length;i++){
+                        if (FoodTypeList[i].equals(FoodTypeCursor.getString(1))) {
+                            FoodTypeListScore[i] = FoodTypeListScore[i] + FoodTypeCursor.getDouble(0);
+                        }
+                    }
+                } while (FoodTypeCursor.moveToNext());
+            }
+
+            //Queue based on FoodTypeListScore[]
+            int maxCounter;
+            String[] SortedFoodType = new String[FoodTypeList.length];
+
+            for (int k = 0; k < FoodTypeListScore.length; k++){
+                maxCounter = 0;
+                for (int i = 0; i < FoodTypeListScore.length; i++){
+                    if (FoodTypeListScore[i]>= maxCounter){
+                        maxCounter = i;
+                    }
+                }
+                SortedFoodType[k] = FoodTypeList[maxCounter];
+                FoodTypeListScore[maxCounter] = -1.0;
+            }
+
+            List<Object_Food> listItems = new ArrayList<>();
+            rv = (RecyclerView) findViewById(R.id.recommenderView);
+            for(int i = 0; i < FoodTypeList.length; i++) {
+                SQLiteDatabase foods = openOrCreateDatabase("Foods.db", MODE_PRIVATE, null);
+                Cursor resultSetRecommender = foods.rawQuery("Select * from foods WHERE genre = ?", new String[] {SortedFoodType[i]});
+                resultSetRecommender.moveToFirst();
+                if (resultSetRecommender.getCount() != 0){
+                    do{
+                        listItems.add(new Object_Food(
+                                resultSetRecommender.getInt(1),
+                                resultSetRecommender.getString(6),
+                                resultSetRecommender.getString(2),
+                                "$" + resultSetRecommender.getString(5),
+                                resultSetRecommender.getString(3)
+                        ));
+                    } while (resultSetRecommender.moveToNext());
+                }
+            }
+            recommenderAdapter = new Adapter_Recommender(listItems);
+            rv.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+            rv.setAdapter(recommenderAdapter);
         }
+        else {
+            rollbackRecommender();
+        }
+        btn_checkout.setText("Checkout: $" + totalPrice);
+    }
 
-//
-//            for (HashMap<Integer, Double> user : data.values()) {
-//                for (Map.Entry<Integer, Double> e : user.entrySet()) {
-//
-//                }
-//
-//            }
-
-        // tempFoodIDnRating = <FoodID, Rating>
-//        HashMap<Integer, Double> tempFoodIDnRating = null;
-//
-//
-//        // Putting the value in ratingCursor to Map data
-//        if (ratingCursor.getCount() != 0){
-//            do{
-//
-//                tempFoodIDnRating.put(ratingCursor.getInt(1), ratingCursor.getDouble(3));
-//                data.put(ratingCursor.getInt(2), tempFoodIDnRating);
-//
-//            } while (ratingCursor.moveToNext());
-//
-//
-////
-////            for (HashMap<Integer, Double> user : data.values()) {
-////                for (Map.Entry<Integer, Double> e : user.entrySet()) {
-////
-////                }
-////
-////            }
-//
-//        }
-
-        //20230417 recommender RecyclerView
+    //20230417 recommender RecyclerView
+    private void rollbackRecommender() {
+        List<Object_Food> listItems = new ArrayList<>();
         rv = (RecyclerView) findViewById(R.id.recommenderView);
-        SQLiteDatabase foods = openOrCreateDatabase("Foods.db",MODE_PRIVATE,null);
-        Cursor resultSetRecommender = foods.rawQuery("Select * from foods",null);
+        SQLiteDatabase foods = openOrCreateDatabase("Foods.db", MODE_PRIVATE, null);
+        Cursor resultSetRecommender = foods.rawQuery("Select * from foods", null);
         resultSetRecommender.moveToFirst();
 
-        if (resultSetRecommender.getCount() != 0){
-            do{
+        if (resultSetRecommender.getCount() != 0) {
+            do {
                 listItems.add(new Object_Food(
                         resultSetRecommender.getInt(1),
                         resultSetRecommender.getString(6),
@@ -160,10 +217,8 @@ public class Activity_ShoppingCart extends AppCompatActivity {
         }
 
         recommenderAdapter = new Adapter_Recommender(listItems);
-        rv.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         rv.setAdapter(recommenderAdapter);
-
-        btn_checkout.setText("Checkout: $" + totalPrice);
     }
 
     public void goToCheckout(View v){
@@ -186,7 +241,6 @@ public class Activity_ShoppingCart extends AppCompatActivity {
         if (resultSet.getCount() != 0){
             Intent i = new Intent(this, Activity_Preview_Cart.class);
             startActivity(i);
-            finish();
         } else {
             Toast.makeText(getApplicationContext(), "You must add product before checkout.", Toast.LENGTH_SHORT).show();
         }
@@ -226,7 +280,6 @@ public class Activity_ShoppingCart extends AppCompatActivity {
 
         }
 
-
         @NonNull
         @Override
         public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -236,17 +289,16 @@ public class Activity_ShoppingCart extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull MyHolder holder, int position) {
-            Glide.with(view).load(foodModelList.get(position).getImage()).into(holder.icon);
-//            holder.icon.setImage(foodModelList.get(position).getImage());
-            holder.foodName.setText(foodModelList.get(position).getFoodName());
-            holder.foodPrice.setText(foodModelList.get(position).getFoodPrice());
-            holder.foodType.setText(foodModelList.get(position).getFoodType());
-            key_foodID = foodModelList.get(position).getFoodID();
+            Glide.with(view).load(foodModelList.get(holder.getAdapterPosition()).getImage()).into(holder.icon);
+//            holder.icon.setImage(foodModelList.get(pos).getImage());
+            holder.foodName.setText(foodModelList.get(holder.getAdapterPosition()).getFoodName());
+            holder.foodPrice.setText(foodModelList.get(holder.getAdapterPosition()).getFoodPrice());
+            holder.foodType.setText(foodModelList.get(holder.getAdapterPosition()).getFoodType());
 
             view.setOnClickListener(new View.OnClickListener() {
-
                 @Override
                 public void onClick(View view) {
+                    key_foodID = foodModelList.get(holder.getAdapterPosition()).getFoodID();
                     final String key_username = getIntent().getStringExtra("username");   //Pass from LoginActivity
                     Intent intent;
                     // Access the row position here to get the correct data item

@@ -231,6 +231,7 @@ public class Activity_Homepage extends AppCompatActivity {
 
     public void goToShoppingCart(View v){
         Intent i = new Intent(this, Activity_ShoppingCart.class);
+        i.putExtra("username", getIntent().getStringExtra("username"));
         startActivity(i);
     }
 }

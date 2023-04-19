@@ -205,7 +205,7 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
                 final int product_id = getIntent().getIntExtra("product_model",0);
                 final String product_name = getIntent().getStringExtra("product_name");
                 final String price = getIntent().getStringExtra("price");
-                final int food_image = getIntent().getIntExtra("food_image",0);
+                final String food_image = getIntent().getStringExtra("food_image");
                 String product_name_size = product_name;
                 String note = noteEdit.getText().toString();
                 Double modelScaleDouble = (double)modelScale;
@@ -227,7 +227,7 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
         configWindow.show();
     }
 
-    public void add_to_shopping_cart(int product_id, String product_name, double price, int image, double scale, String note){
+    public void add_to_shopping_cart(int product_id, String product_name, double price, String image, double scale, String note){
         String productid_size = product_id + foodSize;
 
         SQLiteDatabase cart = openOrCreateDatabase("cart",MODE_PRIVATE,null);
@@ -239,7 +239,7 @@ public class Activity_Preview_Mode extends AppCompatActivity implements
             cv.put("count", cursor.getInt(4) + 1);
             cart.update("cart", cv, "product_id_size = ?", new String [] {productid_size});
         } else {*/
-        cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, product_model, price, image, scale, note) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', '"+ product_model +"', " + price + ", " + image +" , "+ scale +" , '" + note + "');");
+        cart.execSQL("INSERT INTO cart (product_id, product_id_size, count, product_name, product_model, price, image, scale, note) VALUES(" + product_id + ", '" + productid_size + "', " + 1 + ", '" + product_name + "', '"+ product_model +"', " + price + ", '" + image + "' , "+ scale +" , '" + note + "');");
 
         //}
 

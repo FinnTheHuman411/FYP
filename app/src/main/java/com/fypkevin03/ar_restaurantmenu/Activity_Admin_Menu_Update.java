@@ -118,7 +118,7 @@ public class Activity_Admin_Menu_Update extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             progressDialog = ProgressDialog.show(Activity_Admin_Menu_Update.this,
-                    "Creating a new food",
+                    "Updating food data",
                     "Loading, please wait...");
         }
 
@@ -138,7 +138,7 @@ public class Activity_Admin_Menu_Update extends AppCompatActivity {
         protected void onPostExecute(String s) {
             progressDialog.dismiss();
             if (insert ==true) {
-                Toast.makeText(getApplicationContext(), "Food created Successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Food updated Successfully", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }

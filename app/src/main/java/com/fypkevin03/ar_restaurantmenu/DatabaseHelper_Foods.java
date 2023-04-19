@@ -85,4 +85,28 @@ public class DatabaseHelper_Foods extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from foods" , null);
         return cursor;
     }
+
+    public int getCount(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT product_id from foods", null);
+        return cursor.getCount();
+    }
+
+    public int getFoodTypeCount(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT genre from foods GROUP BY genre", null);
+        return cursor.getCount();
+    }
+
+    public String[] getFoodTypeList(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT genre, COUNT(*) from foods GROUP BY genre", null);
+        String[] foodTypeList = new String[cursor.getCount()];
+        cursor.moveToFirst();
+        for(int i = 0; i < cursor.getCount(); i++){
+            foodTypeList[i] = cursor.getString(0);
+            cursor.moveToNext();
+        }
+        return foodTypeList;
+    }
 }

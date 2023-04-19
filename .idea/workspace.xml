@@ -23,26 +23,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/biscuit_st_esteve_from_grands_boulevards_hotel.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/cherry_soda_float.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/day_229_miage_pie.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/fizzy_drink.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/goat_cheese_tartine_from_la_mandragore.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/home-made_sandwich.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/home_made_burger_by_t__q.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/pizza_ballerina.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/prime_rib_with_pommes_dauphines.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/ribs_from_joia.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/salad_plate.glb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/assets/vienna_coffee_with_chantilly.glb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Admin_Menu_Update.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Admin_Menu_Update.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_CommentSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_CommentSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_FoodPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_FoodPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Homepage.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Homepage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Preview_Mode.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_Preview_Mode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/DatabaseHelper_Foods.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/DatabaseHelper_Foods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/food_preview_recommender.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/food_preview_recommender.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[adb-R5CT231RKXP-nt9TgM._adb-tls-connect._tcp.]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[adb-R5CT231RKXP-nt9TgM._adb-tls-connect._tcp]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -109,6 +105,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/src/main/java/com/fypkevin03/ar_restaurantmenu/Activity_ShoppingCart.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -138,7 +135,7 @@
     &quot;SHOW_ALL_PROCESSES&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lbens/Documents/GitHub/FYP/app/src/main/res/layout&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lbens/Desktop/FYP&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
