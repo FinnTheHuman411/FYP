@@ -88,13 +88,13 @@ public class Activity_FoodPage extends AppCompatActivity {
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
                 if (getIntent().getStringExtra("username") != null){
                     double ratingValue = (double)v;
-                    Cursor cursor = ratings.rawQuery("Select * from ratings WHERE username = ?",new String[] {key_username});
+                    Cursor cursor = ratings.rawQuery("Select * from ratings WHERE username = ? AND product_id = ?",new String[] {key_username, Integer.toString(product_id)});
 
                     if (cursor.getCount()>0) {
                         cursor.moveToFirst();
                         ContentValues cv = new ContentValues();
                         cv.put("rating", ratingValue);
-                        ratings.update("ratings", cv, "username = ?", new String [] {key_username});
+                        ratings.update("ratings", cv, "username = ? AND product_id = ?", new String [] {key_username, Integer.toString(product_id)});
                     } else {
                         ratings.execSQL("INSERT INTO ratings (product_id, username, rating) VALUES(" + product_id + ", '" + key_username + "', " + ratingValue + ");");
                     }

@@ -14,7 +14,12 @@
         android:layout_margin="8dp"
         android:layout_weight="11"
         android:divider="@null"
-        android:dividerHeight="10dp"/>
+        android:dividerHeight="10dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recommenderView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
