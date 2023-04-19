@@ -118,6 +118,7 @@ public class Activity_Login extends AppCompatActivity {
         Intent i = new Intent(this, Activity_Homepage.class);
         //i.putExtra("username","Guest");
         startActivity(i);
+        finish();
     }
 
 }

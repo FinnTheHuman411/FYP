@@ -13,18 +13,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin"
             android:label="Admin Panel"/>
+
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_AC_Add"
-            android:label="Admin Add Account"/>
-        <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_Menu_Add"
-            android:label="Add food entry"/>
+            android:label="Create Admin Account"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_AC_Viewer"
             android:label="Manage Accounts"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_AC_Dashboard"
             android:label="Manage Accounts"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_AC_Update"
             android:label="Update Account"/>
+
+        <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_Menu_Add"
+            android:label="Add Food"/>
+        <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_Menu_Viewer"
+            android:label="Manage Foods"/>
+        <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_Menu_Dashboard"
+            android:label="Manage Foods"/>
+        <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Admin_Menu_Update"
+            android:label="Update Foods"/>
+
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Summary"
             android:label="Summary"/>
         <activity android:name="com.fypkevin03.ar_restaurantmenu.Activity_Checkout"

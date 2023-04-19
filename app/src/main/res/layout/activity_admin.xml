@@ -124,7 +124,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="Edit menu"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:onClick="openActivity_Edit_Menu"/>
 
             <Space
                 android:layout_width="match_parent"

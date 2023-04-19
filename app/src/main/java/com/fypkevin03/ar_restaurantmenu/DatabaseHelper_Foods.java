@@ -3,6 +3,7 @@ package com.fypkevin03.ar_restaurantmenu;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -50,4 +51,38 @@ public class DatabaseHelper_Foods extends SQLiteOpenHelper {
         else return true;
     }
 
+    public boolean update(int product_id, String product_name, String genre, String product_info, Double price, String image, String product_model, Double size_s, Double size_l){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("product_name", product_name);
+        contentValues.put("genre", genre);
+        contentValues.put("product_info", product_info);
+        contentValues.put("price", price);
+        contentValues.put("image", image);
+        contentValues.put("product_model", product_model);
+        contentValues.put("size_s", size_s);
+        contentValues.put("size_l", size_l);
+        long upd = db.update("foods", contentValues, "product_id = ?", new String[] {Integer.toString(product_id)});
+        if (upd == -1) return false;
+        else return true;
+    }
+
+    public boolean remove(int product_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long upd = db.delete("foods", "product_id = ?", new String[] {Integer.toString(product_id)});
+        if (upd == -1) return false;
+        else return true;
+    }
+
+    public Cursor getInfo(int product_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from foods where product_id = ?" , new String[]{Integer.toString(product_id)});
+        return cursor;
+    }
+
+    public Cursor getAllFoods(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from foods" , null);
+        return cursor;
+    }
 }

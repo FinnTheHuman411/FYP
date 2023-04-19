@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 
 public class Activity_FoodPage extends AppCompatActivity {
 
+    DatabaseHelper_Foods db;
     int product_id;
     double product_size_s, product_size_l;
     double modelScale = 1;
@@ -32,11 +33,12 @@ public class Activity_FoodPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foodpage);
 
+        db = new DatabaseHelper_Foods(this);
+
         final int food_id = getIntent().getIntExtra("product_id",0);   // Pass from Food Page
         final String key_username = getIntent().getStringExtra("username");
         product_id = food_id;
-        SQLiteDatabase foods = openOrCreateDatabase("Foods.db",MODE_PRIVATE,null);
-        Cursor resultSet = foods.rawQuery("Select * from foods WHERE product_id = ?",new String[] {Integer.toString(product_id)});
+        Cursor resultSet = db.getInfo(product_id);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);

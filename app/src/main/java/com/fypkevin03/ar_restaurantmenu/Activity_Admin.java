@@ -45,13 +45,10 @@ public class Activity_Admin extends AppCompatActivity {
         startActivity(intent);
     }
 
-/*
-        public void openActivity_Edit_Menu(View v) {
-            Intent intent = new Intent(this, Activity_Admin_AC_Add.class);
-            startActivity(intent);
-        }
- */
-
+    public void openActivity_Edit_Menu(View v) {
+        Intent intent = new Intent(this, Activity_Admin_Menu_Viewer.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){

@@ -31,6 +31,7 @@ public class Activity_Homepage extends AppCompatActivity {
     GridView gridView;
     List<Object_Food> listItems = new ArrayList<>();
     HomePageAdapter homePageAdapter;
+    DatabaseHelper_Foods db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +44,10 @@ public class Activity_Homepage extends AppCompatActivity {
 
         gridView = findViewById(R.id.gridview);
 
-        SQLiteDatabase foods = openOrCreateDatabase("Foods.db",MODE_PRIVATE,null);
+        db = new DatabaseHelper_Foods(this);
         homePageAdapter = new HomePageAdapter(listItems,this);
         gridView.setAdapter(homePageAdapter);
-        Cursor resultSet = foods.rawQuery("Select * from foods",null);
+        Cursor resultSet = db.getAllFoods();
         resultSet.moveToFirst();
 
         if (resultSet.getCount() != 0){

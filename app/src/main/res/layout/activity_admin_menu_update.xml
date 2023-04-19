@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <!--Title-->
+            <TextView
+                android:id="@+id/updateFoodtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Update Food #1001"
+                android:textSize="30sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <!--Input Bars 1-->
+            <EditText
+                android:id="@+id/FoodName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="5dp"
+                android:hint="Food Name"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <!--Input Bars 2-->
+            <EditText
+                android:id="@+id/FoodPrice"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="5dp"
+                android:hint="Food Price"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp"
+                android:inputType="numberDecimal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+            <!--Input Bars 3-->
+            <EditText
+                android:id="@+id/FoodType"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Food Type"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+            <!--Input Bars 4-->
+            <EditText
+                android:id="@+id/FoodInfo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Food Info"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+            <!--Input Bars 5-->
+            <EditText
+                android:id="@+id/FoodImage"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableRight="@drawable/baseline_camera_alt_24"
+                android:drawablePadding="5dp"
+                android:hint="Upload Food Image (Link)"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+            <!--Input Bars 6-->
+            <EditText
+                android:id="@+id/FoodModel"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableRight="@drawable/ic_model"
+                android:drawablePadding="5dp"
+                android:hint="Upload Food Model (Link)"
+                android:maxLines="1"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+
+            <!--Input Bars 7-->
+            <EditText
+                android:id="@+id/S_ratio"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="5dp"
+                android:hint="Small Size Ratio (Reduce)"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp"
+                android:inputType="numberDecimal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+            <!--Input Bars 8-->
+            <EditText
+                android:id="@+id/L_ratio"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawablePadding="5dp"
+                android:hint="Large Size Ratio (Enlarge)"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textSize="16sp"
+                android:inputType="numberDecimal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+
+            <!--Sumbit button-->
+            <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Submit"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
