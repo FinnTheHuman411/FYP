@@ -147,7 +147,9 @@ public class Activity_ShoppingCart extends AppCompatActivity {
                 do {
                     for (int i = 0; i < FoodTypeList.length;i++){
                         if (FoodTypeList[i].equals(FoodTypeCursor.getString(1))) {
-                            FoodTypeListScore[i] = FoodTypeListScore[i] + FoodTypeCursor.getDouble(0);
+                            FoodTypeListScore[i] = FoodTypeListScore[i] + 3.0 + (FoodTypeCursor.getDouble(0) - 3.0);
+                        } else {
+                            FoodTypeListScore[i] = FoodTypeListScore[i] + 3.0;
                         }
                     }
                 } while (FoodTypeCursor.moveToNext());
@@ -160,7 +162,7 @@ public class Activity_ShoppingCart extends AppCompatActivity {
             for (int k = 0; k < FoodTypeListScore.length; k++){
                 maxCounter = 0;
                 for (int i = 0; i < FoodTypeListScore.length; i++){
-                    if (FoodTypeListScore[i]>= maxCounter){
+                    if (FoodTypeListScore[i] >= FoodTypeListScore[maxCounter]){
                         maxCounter = i;
                     }
                 }
